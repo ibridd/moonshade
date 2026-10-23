@@ -2,6 +2,10 @@
     <img src="assets/moonshade-banner.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
 </p>
 
+<p align="center">
+    <img src="assets/moonshade-screenshot.svg" width="100%">
+</p>
+
 ---
 
 ### 📃 Prefácio
