@@ -171,5 +171,5 @@ Encontrou um bug ou tem uma sugestão? Abra uma [issue](https://github.com/ibrid
 ---
 
 <p align="center">
-    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" widith="100%">
+    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
 </p>
