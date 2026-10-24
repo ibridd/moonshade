@@ -1,0 +1,2514 @@
+/* @settings
+name: Moonshade
+id: moonshade-settings
+settings:
+    -
+        id: lua-info
+        title: About this theme
+        title.pt-BR: Sobre este tema
+        description: Moonshade only works in Obsidian's dark mode (Settings → Appearance → Base color scheme → Dark). In light mode, nothing is applied.
+        description.pt-BR: O Moonshade só funciona no modo escuro do Obsidian (Configurações → Aparência → Cores base → Escuro). No modo claro, nada é aplicado.
+        type: info-text
+
+    -
+        id: lua-h-colors
+        title: Colors
+        title.pt-BR: Cores
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: lua-palette
+        title: Color palette
+        title.pt-BR: Paleta de cores
+        description: Changes the accent (links, selection, focus and active item), the folder and graph colors, and the Canvas borders and arrows in one go. Files and interface borders stay the same.
+        description.pt-BR: Muda de uma vez o destaque (links, seleção, foco e item ativo), as cores das pastas e do gráfico, e as bordas e setas do Canvas. Os arquivos e as bordas da interface não mudam.
+        type: class-select
+        allowEmpty: false
+        default: lua-pal-lua
+        options:
+            -
+                label: Moon (lilac)
+                label.pt-BR: Lua (lilás)
+                value: lua-pal-lua
+            -
+                label: Lavender
+                label.pt-BR: Lavanda
+                value: lua-pal-lavanda
+            -
+                label: Ocean (blue)
+                label.pt-BR: Oceano (azul)
+                value: lua-pal-oceano
+            -
+                label: Sky (light blue)
+                label.pt-BR: Céu (azul-claro)
+                value: lua-pal-ceu
+            -
+                label: Aurora (turquoise)
+                label.pt-BR: Aurora (turquesa)
+                value: lua-pal-aurora
+            -
+                label: Forest (green)
+                label.pt-BR: Bosque (verde)
+                value: lua-pal-bosque
+            -
+                label: Honey (yellow)
+                label.pt-BR: Mel (amarelo)
+                value: lua-pal-mel
+            -
+                label: Amber (golden)
+                label.pt-BR: Âmbar (dourado)
+                value: lua-pal-ambar
+            -
+                label: Peach (orange)
+                label.pt-BR: Pêssego (laranja)
+                value: lua-pal-pessego
+            -
+                label: Ruby (red)
+                label.pt-BR: Rubi (vermelho)
+                value: lua-pal-rubi
+            -
+                label: Twilight (pink)
+                label.pt-BR: Crepúsculo (rosa)
+                value: lua-pal-crepusculo
+            -
+                label: Mist (soft)
+                label.pt-BR: Névoa (suave)
+                value: lua-pal-nevoa
+    -
+        id: lua-flavor
+        title: Background tone
+        title.pt-BR: Tom do fundo
+        description: Deep is the near-black tone. Night is one step lighter, with the blue-purple tint more visible.
+        description.pt-BR: Profunda é o tom quase preto. Noite é um degrau mais claro, com o roxo-azulado mais evidente.
+        type: class-select
+        allowEmpty: false
+        default: lua-profunda
+        options:
+            -
+                label: Deep (almost black)
+                label.pt-BR: Profunda (quase preto)
+                value: lua-profunda
+            -
+                label: Night (a bit lighter)
+                label.pt-BR: Noite (um pouco mais claro)
+                value: lua-noite
+
+    -
+        id: lua-h-shape
+        title: Shape
+        title.pt-BR: Formato
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: lua-radius
+        title: Corner radius
+        title.pt-BR: Arredondamento dos cantos
+        description: 0 makes everything square; larger values round more. Applies to tabs, buttons, tables, quotes and panel frames.
+        description.pt-BR: 0 deixa tudo reto; valores maiores arredondam mais. Vale para abas, botões, tabelas, citações e molduras dos painéis.
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 20
+        step: 1
+        format: px
+    -
+        id: lua-line-width
+        title: Note text width
+        title.pt-BR: Largura do texto da nota
+        description: Maximum width of the text column, in reading and editing. In narrow windows, the text uses the full width.
+        description.pt-BR: Largura máxima da coluna de texto, na leitura e na edição. Em janelas estreitas, o texto ocupa a largura toda.
+        type: variable-number-slider
+        default: 650
+        min: 500
+        max: 1100
+        step: 20
+        format: px
+
+    -
+        id: lua-h-notes
+        title: Text and tables
+        title.pt-BR: Texto e tabelas
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: lua-text-size
+        title: Note text size
+        title.pt-BR: Tamanho do texto das notas
+        description: Applies to notes only. With "Obsidian default", it uses the size set in Settings → Appearance.
+        description.pt-BR: Vale só para as notas. Em "Padrão do Obsidian", usa o tamanho definido em Configurações → Aparência.
+        type: class-select
+        allowEmpty: false
+        default: lua-text-default
+        options:
+            -
+                label: Obsidian default
+                label.pt-BR: Padrão do Obsidian
+                value: lua-text-default
+            -
+                label: Small (14 px)
+                label.pt-BR: Pequeno (14 px)
+                value: lua-text-sm
+            -
+                label: Large (18 px)
+                label.pt-BR: Grande (18 px)
+                value: lua-text-lg
+            -
+                label: Very large (20 px)
+                label.pt-BR: Muito grande (20 px)
+                value: lua-text-xl
+    -
+        id: lua-line-height
+        title: Line height
+        title.pt-BR: Altura da linha
+        description: Space between lines of body text. The theme default is 1.7.
+        description.pt-BR: Espaço entre as linhas do texto corrido. O padrão do tema é 1,7.
+        type: variable-number-slider
+        default: 1.7
+        min: 1.4
+        max: 2
+        step: 0.05
+    -
+        id: lua-table-density
+        title: Table spacing
+        title.pt-BR: Espaçamento das tabelas
+        description: Inner spacing of cells, in reading and editing.
+        description.pt-BR: Espaço interno das células, na leitura e na edição.
+        type: class-select
+        allowEmpty: false
+        default: lua-table-normal
+        options:
+            -
+                label: Compact
+                label.pt-BR: Compacto
+                value: lua-table-compact
+            -
+                label: Normal
+                value: lua-table-normal
+            -
+                label: Comfortable
+                label.pt-BR: Confortável
+                value: lua-table-comfy
+    -
+        id: lua-callout-style
+        title: Callout style
+        title.pt-BR: Estilo dos callouts
+        description: Changes only the look of callout blocks (> [!note], > [!tip]...). Each type's color and the tinted background are the same in every style. "Default" is the theme's original style.
+        description.pt-BR: Muda só a aparência dos blocos de aviso (> [!note], > [!tip]...). A cor de cada tipo e o fundo em tom são os mesmos em todos os estilos. "Padrão" é o estilo original do tema.
+        type: class-select
+        allowEmpty: false
+        default: lua-callout-1
+        options:
+            -
+                label: Default (thin border and tinted background)
+                label.pt-BR: Padrão (borda fina e fundo em tom)
+                value: lua-callout-1
+            -
+                label: Side bar
+                label.pt-BR: Barra lateral
+                value: lua-callout-2
+            -
+                label: Header band
+                label.pt-BR: Cabeçalho em faixa
+                value: lua-callout-3
+            -
+                label: Minimal
+                label.pt-BR: Minimalista
+                value: lua-callout-8
+            -
+                label: Title tag
+                label.pt-BR: Etiqueta no título
+                value: lua-callout-9
+            -
+                label: Shadow card
+                label.pt-BR: Cartão com sombra
+                value: lua-callout-10
+    -
+        id: lua-tasks-lucide
+        title: Lucide icons in checkboxes
+        title.pt-BR: Ícones Lucide nos checkboxes
+        description: Replaces all checkboxes (pending, done and extra states) with Lucide icons, without a box and at the same size. Checked ones are filled with the state color; pending ones show only the outline.
+        description.pt-BR: Troca todos os checkboxes (pendente, feito e estados extras) por ícones Lucide, sem caixa e do mesmo tamanho. Os marcados ficam preenchidos na cor do estado; o pendente fica só com o contorno.
+        type: class-toggle
+        default: false
+
+    -
+        id: lua-h-type
+        title: Typography
+        title.pt-BR: Tipografia
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: lua-font-text
+        title: Note text font
+        title.pt-BR: Fonte do texto das notas
+        description: If the font isn't installed on your system, Obsidian uses the next one in the list.
+        description.pt-BR: Se a fonte não estiver instalada no sistema, o Obsidian usa a próxima da lista.
+        type: variable-select
+        default: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+        options:
+            -
+                label: System (default)
+                label.pt-BR: Sistema (padrão)
+                value: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Inter
+                value: 'Inter, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Humanist
+                label.pt-BR: Humanista
+                value: '"Segoe UI Variable Text", "Segoe UI", Calibri, Candara, Optima, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Serif
+                label.pt-BR: Serifada
+                value: '"Iowan Old Style", "Palatino Linotype", Georgia, "Apple Color Emoji", "Segoe UI Emoji", serif'
+            -
+                label: Monospace
+                label.pt-BR: Monoespaçada
+                value: '"JetBrains Mono", "Cascadia Code", Consolas, ui-monospace, monospace'
+    -
+        id: lua-font-heading
+        title: Heading font
+        title.pt-BR: Fonte dos títulos
+        description: Note headings H1 to H6. With "Same as text", they use the font chosen above.
+        description.pt-BR: Títulos H1 a H6 das notas. Em "Igual ao texto", usam a fonte escolhida acima.
+        type: variable-select
+        default: 'var(--font-text)'
+        options:
+            -
+                label: Same as text (default)
+                label.pt-BR: Igual ao texto (padrão)
+                value: 'var(--font-text)'
+            -
+                label: System
+                label.pt-BR: Sistema
+                value: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Inter
+                value: 'Inter, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Humanist
+                label.pt-BR: Humanista
+                value: '"Segoe UI Variable Text", "Segoe UI", Calibri, Candara, Optima, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Serif
+                label.pt-BR: Serifada
+                value: '"Iowan Old Style", "Palatino Linotype", Georgia, "Apple Color Emoji", "Segoe UI Emoji", serif'
+    -
+        id: lua-font-interface
+        title: Interface font
+        title.pt-BR: Fonte da interface
+        description: Menus, tabs, explorer and panels.
+        description.pt-BR: Menus, abas, explorador e painéis.
+        type: variable-select
+        default: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+        options:
+            -
+                label: System (default)
+                label.pt-BR: Sistema (padrão)
+                value: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Inter
+                value: 'Inter, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+            -
+                label: Humanist
+                label.pt-BR: Humanista
+                value: '"Segoe UI Variable Text", "Segoe UI", Calibri, Candara, Optima, "Apple Color Emoji", "Segoe UI Emoji", sans-serif'
+    -
+        id: lua-font-mono
+        title: Code font
+        title.pt-BR: Fonte do código
+        description: Code blocks and inline code.
+        description.pt-BR: Blocos de código e código em linha.
+        type: variable-select
+        default: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace'
+        options:
+            -
+                label: System (default)
+                label.pt-BR: Sistema (padrão)
+                value: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace'
+            -
+                label: Cascadia Code
+                value: '"Cascadia Code", Consolas, monospace'
+            -
+                label: JetBrains Mono
+                value: '"JetBrains Mono", Consolas, monospace'
+            -
+                label: Fira Code
+                value: '"Fira Code", Consolas, monospace'
+            -
+                label: Source Code Pro
+                value: '"Source Code Pro", Consolas, monospace'
+    -
+        id: lua-no-ligatures
+        title: Disable ligatures in code
+        title.pt-BR: Desativar ligaduras no código
+        description: Cascadia Code, JetBrains Mono and Fira Code join sequences like => and != into a single symbol. Turn on to see the separate characters.
+        description.pt-BR: Cascadia Code, JetBrains Mono e Fira Code juntam sequências como => e != em um símbolo só. Ative para ver os caracteres separados.
+        type: class-toggle
+        default: false
+
+    -
+        id: lua-h-ui
+        title: Interface
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: lua-scroll
+        title: Scrollbars
+        title.pt-BR: Barras de rolagem
+        description: Thin, subtle bars show there is content to scroll (wide tables, code, lists).
+        description.pt-BR: Finas e discretas indicam que há conteúdo para rolar (tabelas largas, código, listas).
+        type: class-select
+        allowEmpty: false
+        default: lua-scroll-thin
+        options:
+            -
+                label: Thin and subtle
+                label.pt-BR: Finas e discretas
+                value: lua-scroll-thin
+            -
+                label: Hidden
+                label.pt-BR: Escondidas
+                value: lua-scroll-hidden
+    -
+        id: lua-motion-speed
+        title: Animation speed
+        title.pt-BR: Velocidade das animações
+        description: 0 turns off the theme's transitions; 1 is normal speed; larger values slow the animations down.
+        description.pt-BR: 0 desliga as transições do tema; 1 é a velocidade normal; valores maiores deixam as animações mais lentas.
+        type: variable-number-slider
+        default: 1
+        min: 0
+        max: 2
+        step: 0.1
+    -
+        id: lua-smooth-scroll
+        title: Smooth scrolling in reading view
+        title.pt-BR: Rolagem suave na leitura
+        description: Scrolls the note gradually when navigating in reading view.
+        description.pt-BR: Rola a nota de forma gradual ao navegar no modo de leitura.
+        type: class-toggle
+        default: false
+    -
+        id: lua-status-classic
+        title: Classic status bar
+        title.pt-BR: Barra de status clássica
+        description: Turns off the floating pill and uses Obsidian's default status bar, stuck to the window corner.
+        description.pt-BR: Desativa a pílula flutuante e usa a barra de status padrão do Obsidian, colada no canto da janela.
+        type: class-toggle
+        default: false
+    -
+        id: lua-profile-classic
+        title: Classic vault profile
+        title.pt-BR: Perfil do cofre clássico
+        description: Turns off the floating vault pill at the bottom of the explorer and goes back to the default footer.
+        description.pt-BR: Desativa a pílula flutuante do cofre no rodapé do explorador e volta ao rodapé padrão.
+        type: class-toggle
+        default: false
+    -
+        id: lua-explorer-buttons-classic
+        title: Classic explorer buttons
+        title.pt-BR: Botões do explorador clássicos
+        description: Turns off the floating pill of explorer buttons (new note, new folder, sort, expand and collapse) and goes back to Obsidian's default row.
+        description.pt-BR: Desativa a pílula flutuante dos botões do explorador (nova nota, nova pasta, ordenar, expandir e recolher) e volta à fileira padrão do Obsidian.
+        type: class-toggle
+        default: false
+    -
+        id: lua-tabs-classic
+        title: Default Obsidian tabs
+        title.pt-BR: Abas padrão do Obsidian
+        description: Turns off the theme's tab style (pills, larger active tab and highlight line) and goes back to Obsidian's default tabs. Stacked tabs don't change.
+        description.pt-BR: Desativa o estilo de abas do tema (pílulas, aba ativa maior e linha de destaque) e volta às abas padrão do Obsidian. As abas empilhadas não mudam.
+        type: class-toggle
+        default: false
+*/
+
+body.theme-dark {
+
+  --lua-pc-lua: 169, 139, 245;
+  --lua-pc-oceano: 122, 162, 247;
+  --lua-pc-ceu: 130, 200, 235;
+  --lua-pc-aurora: 120, 215, 200;
+  --lua-pc-bosque: 127, 209, 168;
+  --lua-pc-mel: 240, 214, 150;
+  --lua-pc-pessego: 250, 179, 135;
+  --lua-pc-rubi: 229, 100, 122;
+  --lua-pc-crepusculo: 240, 160, 220;
+  --lua-pc-nevoa: 190, 185, 215;
+  --lua-pink: var(--lua-pc-crepusculo);
+  --lua-mauve: var(--lua-pc-lua);
+  --lua-red: var(--lua-pc-rubi);
+  --lua-peach: var(--lua-pc-pessego);
+  --lua-yellow: var(--lua-pc-mel);
+  --lua-green: var(--lua-pc-bosque);
+  --lua-teal: var(--lua-pc-aurora);
+  --lua-sky: var(--lua-pc-ceu);
+  --lua-blue: var(--lua-pc-oceano);
+
+  --lua-text: 201, 198, 220;
+  --lua-heading: 238, 236, 250;
+  --lua-subtext: 176, 173, 201;
+  --lua-overlay2: 156, 153, 182;
+  --lua-overlay1: 136, 133, 162;
+  --lua-overlay0: 124, 121, 152;
+  --lua-surface2: 62, 59, 88;
+  --lua-surface1: 42, 39, 64;
+  --lua-surface0: 26, 24, 40;
+  --lua-base: 7, 7, 12;
+  --lua-mantle: 16, 15, 25;
+  --lua-crust: 4, 4, 8;
+
+  --lua-file: 138, 135, 163;
+
+  --lua-pal-accent: 169, 139, 245;
+  --lua-pal-folder: 169, 166, 194;
+  --lua-pal-gunres: 138, 135, 163;
+  --lua-pal-gline: 105, 94, 149;
+  --lua-pal-gtag: 200, 183, 247;
+  --lua-pal-gatt: 152, 136, 204;
+  --lua-accent: var(--lua-pal-accent);
+
+  --lua-border: rgb(var(--lua-surface1));
+  --lua-border-hover: rgb(var(--lua-surface2));
+
+  --lua-border-soft: rgba(var(--lua-surface2), 0.5);
+}
+
+body.theme-dark.lua-noite {
+  --lua-base: 15, 14, 24;
+  --lua-mantle: 21, 20, 33;
+  --lua-crust: 8, 8, 14;
+  --lua-surface0: 32, 30, 50;
+  --lua-surface1: 48, 45, 74;
+}
+
+body.theme-dark.lua-pal-lavanda {
+  --lua-pal-accent: 180, 170, 254;
+  --lua-pal-folder: 178, 172, 222;
+  --lua-pal-gunres: 135, 130, 170;
+  --lua-pal-gline: 108, 102, 152;
+  --lua-pal-gtag: 206, 200, 252;
+  --lua-pal-gatt: 158, 152, 208;
+}
+body.theme-dark.lua-pal-oceano {
+  --lua-pal-accent: 122, 162, 247;
+  --lua-pal-folder: 150, 170, 210;
+  --lua-pal-gunres: 120, 135, 170;
+  --lua-pal-gline: 92, 100, 150;
+  --lua-pal-gtag: 174, 195, 248;
+  --lua-pal-gatt: 129, 148, 204;
+}
+body.theme-dark.lua-pal-ceu {
+  --lua-pal-accent: 130, 200, 235;
+  --lua-pal-folder: 155, 195, 215;
+  --lua-pal-gunres: 120, 150, 170;
+  --lua-pal-gline: 94, 111, 146;
+  --lua-pal-gtag: 179, 216, 242;
+  --lua-pal-gatt: 133, 166, 198;
+}
+body.theme-dark.lua-pal-aurora {
+  --lua-pal-accent: 120, 215, 200;
+  --lua-pal-folder: 150, 205, 195;
+  --lua-pal-gunres: 130, 160, 160;
+  --lua-pal-gline: 91, 115, 137;
+  --lua-pal-gtag: 173, 224, 222;
+  --lua-pal-gatt: 128, 174, 181;
+}
+body.theme-dark.lua-pal-bosque {
+  --lua-pal-accent: 127, 209, 168;
+  --lua-pal-folder: 160, 205, 180;
+  --lua-pal-gunres: 125, 160, 140;
+  --lua-pal-gline: 93, 113, 128;
+  --lua-pal-gtag: 177, 221, 205;
+  --lua-pal-gatt: 132, 171, 165;
+}
+body.theme-dark.lua-pal-mel {
+  --lua-pal-accent: 240, 214, 150;
+  --lua-pal-folder: 225, 210, 170;
+  --lua-pal-gunres: 165, 155, 125;
+  --lua-pal-gline: 125, 115, 123;
+  --lua-pal-gtag: 239, 224, 195;
+  --lua-pal-gatt: 188, 174, 156;
+}
+body.theme-dark.lua-pal-ambar {
+  --lua-pal-accent: 235, 190, 110;
+  --lua-pal-folder: 215, 195, 160;
+  --lua-pal-gunres: 160, 145, 125;
+  --lua-pal-gline: 123, 108, 111;
+  --lua-pal-gtag: 236, 211, 173;
+  --lua-pal-gatt: 186, 162, 136;
+}
+body.theme-dark.lua-pal-pessego {
+  --lua-pal-accent: 250, 179, 135;
+  --lua-pal-folder: 230, 195, 175;
+  --lua-pal-gunres: 170, 150, 135;
+  --lua-pal-gline: 128, 105, 118;
+  --lua-pal-gtag: 245, 205, 187;
+  --lua-pal-gatt: 193, 156, 148;
+}
+body.theme-dark.lua-pal-rubi {
+  --lua-pal-accent: 229, 100, 122;
+  --lua-pal-folder: 220, 160, 170;
+  --lua-pal-gunres: 165, 125, 135;
+  --lua-pal-gline: 122, 83, 115;
+  --lua-pal-gtag: 233, 161, 180;
+  --lua-pal-gatt: 182, 116, 142;
+}
+body.theme-dark.lua-pal-crepusculo {
+  --lua-pal-accent: 240, 160, 220;
+  --lua-pal-folder: 235, 190, 200;
+  --lua-pal-gunres: 175, 150, 170;
+  --lua-pal-gline: 125, 100, 142;
+  --lua-pal-gtag: 239, 194, 234;
+  --lua-pal-gatt: 188, 146, 191;
+}
+body.theme-dark.lua-pal-nevoa {
+  --lua-pal-accent: 190, 185, 215;
+  --lua-pal-folder: 175, 172, 200;
+  --lua-pal-gunres: 130, 127, 155;
+  --lua-pal-gline: 111, 107, 141;
+  --lua-pal-gtag: 212, 208, 231;
+  --lua-pal-gatt: 163, 159, 188;
+}
+
+body.theme-dark {
+  color-scheme: dark;
+  --file-line-width: var(--lua-line-width, 650px);
+
+  --font-text-theme: var(--lua-font-text, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif);
+  --font-interface-theme: var(--lua-font-interface, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Apple Color Emoji", "Segoe UI Emoji", sans-serif);
+  --font-monospace-theme: var(--lua-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  --h1-font: var(--lua-font-heading, var(--font-text));
+  --h2-font: var(--lua-font-heading, var(--font-text));
+  --h3-font: var(--lua-font-heading, var(--font-text));
+  --h4-font: var(--lua-font-heading, var(--font-text));
+  --h5-font: var(--lua-font-heading, var(--font-text));
+  --h6-font: var(--lua-font-heading, var(--font-text));
+  --radius-s: calc(var(--lua-radius, 10px) * 0.6);
+  --radius-m: var(--lua-radius, 10px);
+  --radius-l: calc(var(--lua-radius, 10px) * 1.4);
+
+  --color-red-rgb: var(--lua-red);
+  --color-orange-rgb: var(--lua-peach);
+  --color-yellow-rgb: var(--lua-yellow);
+  --color-green-rgb: var(--lua-green);
+  --color-cyan-rgb: var(--lua-teal);
+  --callout-quote: var(--lua-pc-nevoa);
+  --color-blue-rgb: var(--lua-blue);
+  --color-purple-rgb: var(--lua-mauve);
+  --color-pink-rgb: var(--lua-pink);
+  --color-red: rgb(var(--lua-red));
+  --color-orange: rgb(var(--lua-peach));
+  --color-yellow: rgb(var(--lua-yellow));
+  --color-green: rgb(var(--lua-green));
+  --color-cyan: rgb(var(--lua-teal));
+  --color-blue: rgb(var(--lua-blue));
+  --color-purple: rgb(var(--lua-mauve));
+  --color-pink: rgb(var(--lua-pink));
+
+  --color-accent: rgb(var(--lua-accent));
+  --color-accent-1: rgb(var(--lua-accent));
+  --color-accent-2: rgba(var(--lua-accent), 0.85);
+  --interactive-accent: rgb(var(--lua-accent));
+  --interactive-accent-hover: rgba(var(--lua-accent), 0.85);
+  --text-accent: rgb(var(--lua-accent));
+  --text-accent-hover: rgba(var(--lua-accent), 0.8);
+  --text-on-accent: rgb(var(--lua-crust));
+  --text-selection: rgba(var(--lua-accent), 0.28);
+  --background-modifier-active: rgba(var(--lua-accent), 0.12);
+
+  --background-primary: rgb(var(--lua-base));
+  --background-primary-alt: rgb(var(--lua-mantle));
+  --background-secondary: rgb(var(--lua-mantle));
+  --background-secondary-alt: rgb(var(--lua-crust));
+  --background-modifier-hover: rgba(var(--lua-text), 0.06);
+  --background-modifier-form-field: rgba(var(--lua-crust), 0.6);
+  --background-modifier-border: var(--lua-border);
+  --background-modifier-border-hover: var(--lua-border-hover);
+  --background-modifier-border-focus: rgb(var(--lua-accent));
+  --background-modifier-cover: rgba(var(--lua-crust), 0.85);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.6);
+  --background-modifier-success: rgb(var(--lua-green));
+  --background-modifier-error: rgb(var(--lua-red));
+  --modal-border-width: 1px;
+  --modal-border-color: var(--lua-border);
+  --interactive-normal: rgb(var(--lua-surface0));
+  --interactive-hover: rgb(var(--lua-surface1));
+
+  --divider-color: var(--lua-border);
+  --divider-color-hover: rgb(var(--lua-accent));
+  --divider-width: 1px;
+  --divider-width-hover: 2px;
+
+  --text-normal: rgb(var(--lua-text));
+  --text-muted: rgb(var(--lua-overlay2));
+  --text-faint: rgb(var(--lua-overlay0));
+  --text-error: rgb(var(--lua-red));
+  --text-success: rgb(var(--lua-green));
+  --icon-color: rgb(var(--lua-overlay1));
+  --icon-color-hover: rgb(var(--lua-accent));
+  --icon-color-active: rgb(var(--lua-accent));
+  --icon-color-focused: rgb(var(--lua-accent));
+
+  --blockquote-border-thickness: 0px;
+  --blockquote-background-color: rgba(var(--lua-surface0), 0.5);
+  --table-border-width: 0px;
+  --table-header-border-width: 0px;
+  --table-column-first-border-width: 0px;
+  --table-column-last-border-width: 0px;
+  --table-row-last-border-width: 0px;
+  --table-header-background: rgb(var(--lua-surface0));
+  --table-header-background-hover: rgb(var(--lua-surface1));
+  --table-header-color: rgb(var(--lua-heading));
+  --table-row-alt-background: rgba(var(--lua-surface0), 0.45);
+
+  --lua-table-pad-y: 0.55em;
+  --lua-table-pad-x: 0.65em;
+  --lua-table-head-bg: rgb(var(--lua-surface0));
+  --lua-table-row-bg: rgba(var(--lua-surface0), 0.22);
+  --lua-table-row-alt-bg: rgba(var(--lua-surface0), 0.45);
+  --lua-table-row-hover-bg: rgba(var(--lua-accent), 0.08);
+  --lua-table-col-border: rgba(var(--lua-surface2), 0.28);
+
+  --checkbox-color: rgb(var(--lua-accent));
+  --checkbox-border-color: rgb(var(--lua-surface2));
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(var(--lua-surface2), 0.7);
+  --scrollbar-active-thumb-bg: rgb(var(--lua-overlay0));
+
+  --titlebar-background: rgb(var(--lua-base));
+  --titlebar-background-focused: rgb(var(--lua-base));
+  --titlebar-text-color: rgb(var(--lua-overlay0));
+  --titlebar-text-color-focused: rgb(var(--lua-accent));
+  --ribbon-background: rgb(var(--lua-base));
+  --ribbon-background-collapsed: rgb(var(--lua-base));
+  --tab-outline-width: 0px;
+  --tab-background-active: rgb(var(--lua-surface1));
+  --tab-text-color: rgb(var(--lua-overlay1));
+  --tab-text-color-active: rgb(var(--lua-text));
+  --tab-text-color-focused: rgb(var(--lua-text));
+  --tab-text-color-focused-active: rgb(var(--lua-text));
+  --nav-item-color: rgb(var(--lua-overlay2));
+  --nav-item-color-hover: rgb(var(--lua-text));
+  --nav-item-color-active: rgb(var(--lua-accent));
+  --nav-item-background-hover: rgba(var(--lua-text), 0.06);
+  --nav-item-background-active: rgba(var(--lua-accent), 0.14);
+  --nav-indentation-guide-width: 0px;
+
+  --graph-line: rgb(var(--lua-pal-gline));
+  --graph-node: rgb(var(--lua-pal-folder));
+  --graph-node-focused: rgb(var(--lua-accent));
+  --graph-node-tag: rgb(var(--lua-pal-gtag));
+  --graph-node-attachment: rgb(var(--lua-pal-gatt));
+  --graph-node-unresolved: rgb(var(--lua-pal-gunres));
+  --graph-text: rgb(var(--lua-subtext));
+}
+
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  background-color: var(--lua-border);
+}
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:hover,
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:hover,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
+  background-color: rgb(var(--lua-accent));
+}
+
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active),
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active),
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active) {
+  background-color: var(--lua-border) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active)::after,
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active)::after,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active)::after {
+  display: none;
+}
+
+body.theme-dark .workspace-split.mod-left-split,
+body.theme-dark .workspace-split.mod-right-split {
+  border: 0;
+  box-shadow: none;
+}
+
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  clip-path: inset(var(--header-height) 0 0 0);
+}
+
+body.theme-dark {
+  --lua-pill-space: 68px;
+}
+body.theme-dark .workspace-split.mod-vertical,
+body.theme-dark .workspace-split.mod-horizontal {
+  gap: 0;
+}
+body.theme-dark .workspace-tabs {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active) {
+  background-color: var(--lua-border) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
+body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active)::after {
+  display: none;
+}
+body.theme-dark .workspace-leaf-resize-handle:hover,
+body.theme-dark .workspace-leaf-resize-handle:active {
+  background-color: rgb(var(--lua-accent));
+}
+
+body.theme-dark .workspace-split,
+body.theme-dark .workspace-tabs,
+body.theme-dark .workspace-leaf,
+body.theme-dark .workspace-tab-container,
+body.theme-dark .workspace-tab-header-container {
+  border-color: var(--lua-border);
+}
+
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active),
+body.theme-dark:not(.is-mobile) .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active) {
+  background-color: transparent !important;
+}
+
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split  { --lua-fl: -1px; --lua-fr: -1px; }
+body.theme-dark:not(.is-mobile) .workspace-split.mod-root        { --lua-fl: 0px;  --lua-fr: -1px; --lua-wedge-l: var(--lua-mantle); --lua-wedge-r: var(--lua-mantle); --lua-wedge-ra: 1; --lua-line-l: var(--lua-border); --lua-line-r: var(--lua-border); }
+body.theme-dark:not(.is-mobile) .workspace-split.mod-right-split { --lua-fl: 0px;  --lua-fr: 0px; }
+
+body.theme-dark:not(.is-mobile):has(.workspace-split.mod-left-split.is-sidedock-collapsed) .workspace-split.mod-root  { --lua-fl: -1px; --lua-wedge-l: var(--lua-base); --lua-line-l: transparent; }
+body.theme-dark:not(.is-mobile):has(.workspace-split.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-root { --lua-fr: 0px; --lua-wedge-ra: 0; --lua-line-r: transparent; }
+
+body.theme-dark:not(.is-mobile):has(.workspace-split.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-root::after { border-right: 0; border-top-right-radius: 0; }
+
+body.theme-dark:not(.is-mobile) :is(.workspace-split.mod-root, .workspace-split.mod-left-split:not(.is-sidedock-collapsed), .workspace-split.mod-right-split:not(.is-sidedock-collapsed)) {
+  position: relative;
+}
+body.theme-dark:not(.is-mobile) :is(.workspace-split.mod-root, .workspace-split.mod-left-split:not(.is-sidedock-collapsed), .workspace-split.mod-right-split:not(.is-sidedock-collapsed))::before {
+  content: "";
+  position: absolute;
+  left: var(--lua-fl);
+  right: var(--lua-fr);
+  top: calc(var(--header-height) - 1px);
+  height: var(--radius-l);
+  pointer-events: none;
+  z-index: 20;
+  background:
+    radial-gradient(circle at 0 100%, transparent var(--radius-l), rgb(var(--lua-base)) var(--radius-l)) right top / var(--radius-l) var(--radius-l) no-repeat,
+    radial-gradient(circle at 100% 100%, transparent var(--radius-l), rgb(var(--lua-base)) var(--radius-l)) left top / var(--radius-l) var(--radius-l) no-repeat;
+}
+body.theme-dark:not(.is-mobile) :is(.workspace-split.mod-root, .workspace-split.mod-left-split:not(.is-sidedock-collapsed), .workspace-split.mod-right-split:not(.is-sidedock-collapsed))::after {
+  content: "";
+  position: absolute;
+  left: var(--lua-fl);
+  right: var(--lua-fr);
+  bottom: 0;
+  top: calc(var(--header-height) - 1px);
+  border: 1px solid var(--lua-border);
+  border-bottom: 0;
+  border-radius: var(--radius-l) var(--radius-l) 0 0;
+  pointer-events: none;
+  z-index: 21;
+}
+
+body.theme-dark:not(.is-mobile) .workspace-split.mod-right-split:not(.is-sidedock-collapsed)::before {
+  display: none;
+}
+body.theme-dark:not(.is-mobile) .workspace-split.mod-right-split:not(.is-sidedock-collapsed)::after {
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+}
+
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split:not(.is-sidedock-collapsed)::before {
+  background:
+    radial-gradient(circle at 100% 100%, transparent var(--radius-l), rgb(var(--lua-base)) var(--radius-l)) left top / var(--radius-l) var(--radius-l) no-repeat;
+}
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split:not(.is-sidedock-collapsed)::after {
+  border-right: 0;
+  border-radius: var(--radius-l) 0 0 0;
+}
+
+body.theme-dark:not(.is-mobile) .workspace .workspace-split.mod-root::before {
+  background:
+    linear-gradient(var(--lua-line-r), var(--lua-line-r)) right top / var(--radius-l) 1px no-repeat,
+    linear-gradient(var(--lua-line-l), var(--lua-line-l)) left top / var(--radius-l) 1px no-repeat,
+    radial-gradient(circle at 0 100%, transparent var(--radius-l), rgba(var(--lua-wedge-r), var(--lua-wedge-ra)) var(--radius-l)) right top / var(--radius-l) var(--radius-l) no-repeat,
+    radial-gradient(circle at 100% 100%, transparent var(--radius-l), rgb(var(--lua-wedge-l)) var(--radius-l)) left top / var(--radius-l) var(--radius-l) no-repeat;
+}
+
+body.theme-dark .empty-state-action {
+  border-radius: var(--radius-m);
+}
+body.theme-dark .empty-state-action :is(kbd, [class*="hotkey"], [class*="shortcut"]) {
+  border-radius: var(--radius-s);
+}
+
+body.theme-dark:not(.is-mobile) .workspace-sidedock-empty-state {
+  padding-top: calc(var(--header-height) + 12px);
+}
+body.theme-dark:not(.is-mobile) :is(.workspace-split.mod-left-split, .workspace-split.mod-right-split),
+body.theme-dark:not(.is-mobile) :is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) > .workspace-tabs {
+  background: linear-gradient(rgb(var(--lua-base)) calc(var(--header-height) - 1px), rgb(var(--lua-mantle)) calc(var(--header-height) - 1px));
+}
+
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) {
+  position: relative;
+}
+body.theme-dark:not(.is-mobile):not(.lua-profile-classic) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) .workspace-sidedock-vault-profile {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 5;
+  width: auto;
+  background: rgba(var(--lua-mantle), 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+body.theme-dark:not(.is-mobile):not(.lua-profile-classic) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) .nav-files-container {
+  padding-bottom: var(--lua-pill-space);
+}
+body.theme-dark:not(.is-mobile):not(.lua-profile-classic) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content {
+  padding-bottom: var(--lua-pill-space);
+}
+
+body.theme-dark .workspace-ribbon.mod-left {
+  border-right: 1px solid var(--lua-border);
+}
+body.theme-dark .workspace-split.mod-left-split .workspace-tab-header-container,
+body.theme-dark .workspace-split.mod-right-split .workspace-tab-header-container {
+  border-bottom: 1px solid var(--lua-border);
+}
+body.theme-dark .workspace-split.mod-left-split .workspace-tabs,
+body.theme-dark .workspace-split.mod-right-split .workspace-tabs {
+  background: rgb(var(--lua-mantle));
+}
+
+body.theme-dark button:not(.clickable-icon) {
+  background: rgb(var(--lua-surface0));
+  border: 1px solid var(--lua-border);
+}
+body.theme-dark button:not(.clickable-icon):hover {
+  background: rgb(var(--lua-surface1));
+  border-color: var(--lua-border-hover);
+}
+body.theme-dark button.mod-cta {
+  background: rgb(var(--lua-accent));
+  color: rgb(var(--lua-crust));
+  border-color: rgb(var(--lua-accent));
+}
+body.theme-dark button.mod-warning {
+  border-color: rgb(var(--lua-red));
+}
+body.theme-dark input[type="text"],
+body.theme-dark input[type="search"],
+body.theme-dark input[type="number"],
+body.theme-dark input[type="password"],
+body.theme-dark textarea,
+body.theme-dark select,
+body.theme-dark .dropdown {
+  background: rgba(var(--lua-crust), 0.6);
+  border: 1px solid var(--lua-border);
+}
+body.theme-dark input[type="text"]:hover,
+body.theme-dark input[type="search"]:hover,
+body.theme-dark textarea:hover,
+body.theme-dark select:hover,
+body.theme-dark .dropdown:hover {
+  border-color: var(--lua-border-hover);
+}
+
+body.theme-dark .modal {
+  border: 1px solid var(--lua-border);
+}
+
+body.theme-dark .modal.mod-settings {
+  --modal-border-color: var(--lua-border-hover);
+  border-color: var(--lua-border-hover);
+}
+
+body.theme-dark.is-popout-window:has(.vertical-tab-header)::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  border: 1px solid var(--lua-border-hover);
+  border-radius: 8px;
+}
+body.theme-dark .prompt {
+  background: rgb(var(--lua-mantle));
+  border: 1px solid var(--lua-border);
+}
+body.theme-dark .menu {
+  background: rgb(var(--lua-mantle));
+  border: 1px solid var(--lua-border);
+}
+body.theme-dark .notice {
+  border: 1px solid var(--lua-border);
+}
+
+body.theme-dark .tooltip {
+  background: rgba(var(--lua-mantle), 0.96);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: rgb(var(--lua-subtext));
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 6px 11px;
+  font-size: 0.85em;
+  line-height: 1.5;
+  max-width: 340px;
+}
+
+body.theme-dark .tooltip .tooltip-arrow {
+  display: none;
+}
+body.theme-dark .suggestion-item.is-selected {
+  background: rgba(var(--lua-accent), 0.16);
+}
+
+body.theme-dark:not(.lua-status-classic) {
+  --status-bar-position: fixed;
+}
+body.theme-dark:not(.lua-status-classic) .status-bar {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(var(--lua-mantle), 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  color: rgb(var(--lua-overlay1));
+}
+
+body.theme-dark .titlebar-button-container {
+  z-index: 100;
+  align-items: center;
+}
+body.theme-dark .titlebar-button-container .titlebar-button {
+  width: 34px;
+  height: calc(var(--header-height) - 14px);
+  max-height: calc(100% - 6px);
+  margin: 0 2px;
+  align-self: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border-radius: var(--radius-s);
+  color: rgb(var(--lua-overlay1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.theme-dark .titlebar-button-container .titlebar-button svg {
+  display: none;
+}
+body.theme-dark .titlebar-button-container .titlebar-button::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask: var(--lua-win-icon) center / contain no-repeat;
+  mask: var(--lua-win-icon) center / contain no-repeat;
+}
+body.theme-dark .titlebar-button-container .titlebar-button.mod-minimize {
+  --lua-win-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+}
+body.theme-dark .titlebar-button-container .titlebar-button:is(.mod-maximize, .mod-restore) {
+  --lua-win-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='5' width='14' height='14' rx='3'/%3E%3C/svg%3E");
+}
+body.theme-dark .titlebar-button-container .titlebar-button.mod-close {
+  --lua-win-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E");
+}
+body.theme-dark .titlebar-button-container .titlebar-button:hover {
+  background: rgba(var(--lua-text), 0.08);
+  color: rgb(var(--lua-text));
+}
+body.theme-dark .titlebar-button-container .titlebar-button.mod-close:hover {
+  background: rgb(var(--lua-red));
+  color: rgb(var(--lua-crust));
+}
+
+body.theme-dark .titlebar-button-container .titlebar-button.mod-logo {
+  display: none;
+}
+
+body.theme-dark .graph-controls {
+  background: rgb(var(--lua-mantle));
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+}
+body.theme-dark .graph-controls.is-close {
+  background: transparent;
+  border-color: transparent;
+}
+
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tab-header-container {
+  background: rgb(var(--lua-base));
+  border-bottom: 1px solid var(--lua-border);
+  height: var(--header-height);
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tab-header-container-inner {
+
+  flex: 0 1 auto;
+  min-width: 0;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0 8px;
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  height: calc(var(--header-height) - 12px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: calc(var(--lua-radius, 10px) * 0.8);
+  background: rgba(var(--lua-surface0), 0.5);
+  box-shadow: none;
+  flex: 0 1 150px;
+  max-width: 150px;
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::after,
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {
+  display: none;
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner {
+  padding: 0 10px;
+  justify-content: center;
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover {
+  background: rgba(var(--lua-surface1), 0.7);
+}
+
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  background: rgb(var(--lua-surface1));
+  box-shadow: inset 0 -2px 0 rgba(var(--lua-accent), 0.8);
+  flex-basis: 250px;
+  max-width: 250px;
+}
+
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):not(:hover) .workspace-tab-header-inner-close-button {
+  opacity: 0;
+}
+
+body.theme-dark.lua-tabs-classic {
+  --lua-foot: 8px;
+
+  --tab-background-active: rgb(var(--lua-base));
+}
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+  padding-left: calc(var(--radius-l) + var(--lua-foot) + 2px);
+}
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+
+  box-shadow: 0 1px 0 0 var(--tab-background-active);
+
+  box-sizing: border-box;
+  border: 1px solid var(--lua-border);
+  border-bottom: 0;
+
+  position: relative;
+  z-index: 22;
+}
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active::before,
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  width: var(--lua-foot);
+  height: var(--lua-foot);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active::before {
+  left: calc(var(--lua-foot) * -1);
+  background: radial-gradient(circle at 0 0, transparent calc(var(--lua-foot) - 1.5px), var(--lua-border) calc(var(--lua-foot) - 1px), var(--lua-border) calc(var(--lua-foot) - 0.5px), var(--tab-background-active) var(--lua-foot));
+}
+body.theme-dark.lua-tabs-classic .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active::after {
+  right: calc(var(--lua-foot) * -1);
+  background: radial-gradient(circle at 100% 0, transparent calc(var(--lua-foot) - 1.5px), var(--lua-border) calc(var(--lua-foot) - 1px), var(--lua-border) calc(var(--lua-foot) - 0.5px), var(--tab-background-active) var(--lua-foot));
+}
+
+body.theme-dark:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  padding: 10px 10px 4px;
+}
+body.theme-dark:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+  padding: 3px 6px;
+  background: rgba(var(--lua-base), 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+body.theme-dark {
+  --lua-explorer-folder: var(--lua-pal-folder);
+  --lua-explorer-file: var(--lua-file);
+}
+body.theme-dark .nav-folder-title:not(.is-active):not(:hover) {
+  color: rgb(var(--lua-explorer-folder));
+}
+body.theme-dark .nav-file-title:not(.is-active):not(:hover) {
+  color: rgb(var(--lua-explorer-file));
+}
+body.theme-dark .nav-folder-title,
+body.theme-dark .nav-file-title {
+  border: 0;
+  border-radius: var(--radius-s);
+}
+body.theme-dark .nav-file-title.is-active,
+body.theme-dark .nav-folder-title.is-active {
+  background: rgba(var(--lua-accent), 0.14);
+}
+
+body.theme-dark {
+  --lua-icon-folder: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22/%3E%3C/svg%3E");
+  --lua-icon-folder-open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2%22/%3E%3C/svg%3E");
+  --lua-icon-note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z%22/%3E%3Cpath d=%22M14 2v4a2 2 0 0 0 2 2h4%22/%3E%3Cpath d=%22M10 9H8%22/%3E%3Cpath d=%22M16 13H8%22/%3E%3Cpath d=%22M16 17H8%22/%3E%3C/svg%3E");
+  --lua-icon-base: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%223%22 rx=%222%22/%3E%3Cpath d=%22M3 9h18%22/%3E%3Cpath d=%22M3 15h18%22/%3E%3Cpath d=%22M12 3v18%22/%3E%3C/svg%3E");
+  --lua-icon-canvas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width=%227%22 height=%229%22 x=%223%22 y=%223%22 rx=%221%22/%3E%3Crect width=%227%22 height=%225%22 x=%2214%22 y=%223%22 rx=%221%22/%3E%3Crect width=%227%22 height=%229%22 x=%2214%22 y=%2212%22 rx=%221%22/%3E%3Crect width=%227%22 height=%225%22 x=%223%22 y=%2216%22 rx=%221%22/%3E%3C/svg%3E");
+  --lua-icon-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%223%22 rx=%222%22 ry=%222%22/%3E%3Ccircle cx=%229%22 cy=%229%22 r=%222%22/%3E%3Cpath d=%22m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21%22/%3E%3C/svg%3E");
+  --lua-icon-file: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z%22/%3E%3Cpath d=%22M14 2v4a2 2 0 0 0 2 2h4%22/%3E%3C/svg%3E");
+}
+body.theme-dark [data-type="file-explorer"] .nav-folder-title::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title::before {
+  content: "";
+  order: 1;
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+  background-color: currentColor;
+  opacity: 0.9;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-folder-title > .tree-item-inner,
+body.theme-dark [data-type="file-explorer"] .nav-file-title > .tree-item-inner {
+  order: 2;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-file-tag {
+  order: 3;
+  margin-left: auto;
+  padding: 1px 6px;
+  border-radius: var(--radius-s);
+  background: rgba(var(--lua-surface0), 0.7);
+  color: rgb(var(--lua-explorer-file));
+  font-size: var(--font-ui-smaller);
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-tag::before {
+  content: ".";
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title.is-active .nav-file-tag {
+  background: rgba(var(--lua-accent), 0.18);
+  color: rgb(var(--lua-accent));
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".md" i] .nav-file-tag {
+  display: none;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-folder.is-collapsed > .nav-folder-title::before {
+  -webkit-mask-image: var(--lua-icon-folder);
+  mask-image: var(--lua-icon-folder);
+}
+body.theme-dark [data-type="file-explorer"] .nav-folder:not(.is-collapsed) > .nav-folder-title::before {
+  -webkit-mask-image: var(--lua-icon-folder-open);
+  mask-image: var(--lua-icon-folder-open);
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-file-title::before {
+  -webkit-mask-image: var(--lua-icon-file);
+  mask-image: var(--lua-icon-file);
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".md" i]::before {
+  -webkit-mask-image: var(--lua-icon-note);
+  mask-image: var(--lua-icon-note);
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".base" i]::before {
+  -webkit-mask-image: var(--lua-icon-base);
+  mask-image: var(--lua-icon-base);
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".canvas" i]::before {
+  -webkit-mask-image: var(--lua-icon-canvas);
+  mask-image: var(--lua-icon-canvas);
+}
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".png" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".jpg" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".jpeg" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".gif" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".webp" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".avif" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".bmp" i]::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".svg" i]::before {
+  -webkit-mask-image: var(--lua-icon-image);
+  mask-image: var(--lua-icon-image);
+}
+
+body.theme-dark.lua-table-compact { --lua-table-pad-y: 0.3em; --lua-table-pad-x: 0.5em; }
+body.theme-dark.lua-table-comfy   { --lua-table-pad-y: 0.8em; --lua-table-pad-x: 0.95em; }
+body.theme-dark.is-mobile         { --lua-table-pad-x: 0.5em; }
+
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget {
+  display: block;
+  width: calc(100% + 32px) !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table.table-editor {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  table-layout: auto;
+}
+body.theme-dark .markdown-rendered table {
+  table-layout: auto;
+}
+
+body.theme-dark .markdown-rendered .el-table {
+  overflow-x: auto;
+}
+
+body.theme-dark .markdown-rendered table {
+  width: 100%;
+  min-width: 100%;
+  max-width: none;
+}
+body.theme-dark .markdown-rendered table,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+body.theme-dark .markdown-rendered table th,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table th,
+body.theme-dark .markdown-rendered table td,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table td {
+  border: 0;
+  border-bottom: 1px solid var(--lua-border-soft);
+  padding: var(--lua-table-pad-y) var(--lua-table-pad-x);
+}
+body.theme-dark .markdown-rendered table tbody tr:last-child > *,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+body.theme-dark .markdown-rendered table th:not(:last-child),
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table th:not(:last-child),
+body.theme-dark .markdown-rendered table td:not(:last-child),
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table td:not(:last-child) {
+  border-right: 1px solid var(--lua-table-col-border);
+}
+body.theme-dark .markdown-rendered table th,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table th {
+  background: var(--lua-table-head-bg);
+  font-weight: 600;
+}
+body.theme-dark .markdown-rendered table td,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table td {
+  background: var(--lua-table-row-bg);
+}
+body.theme-dark .markdown-rendered table tbody tr:nth-child(even) td,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:nth-child(even) td {
+  background: var(--lua-table-row-alt-bg);
+}
+body.theme-dark .markdown-rendered table tbody tr:hover td,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:hover td {
+  background: var(--lua-table-row-hover-bg);
+}
+
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table th,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table td {
+  padding: 0 !important;
+  vertical-align: middle;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: var(--lua-table-pad-y) var(--lua-table-pad-x) !important;
+  min-height: 0;
+  background: transparent;
+}
+
+body.theme-dark .markdown-rendered blockquote {
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  padding: 0.7em 1.1em;
+  background: rgba(var(--lua-surface0), 0.5);
+}
+
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+  background: rgba(var(--lua-surface0), 0.5);
+  border-left: 1px solid var(--lua-border);
+  border-right: 1px solid var(--lua-border);
+  padding-inline-end: 1.1em;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:first-child {
+  border-top: 1px solid var(--lua-border);
+  border-top-left-radius: var(--radius-m);
+  border-top-right-radius: var(--radius-m);
+  padding-top: 0.7em;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)),
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:last-child {
+  border-bottom: 1px solid var(--lua-border);
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+  padding-bottom: 0.7em;
+}
+
+body.theme-dark :is(.u-pop, .suggestion-hotkey, .setting-hotkey, kbd) {
+  border-radius: var(--radius-s);
+}
+
+body.theme-dark {
+  --tag-radius: var(--radius-s);
+}
+body.theme-dark .markdown-rendered a.tag {
+  border-radius: var(--tag-radius);
+}
+
+body.theme-dark {
+
+  --h1-size: 2.1em;
+  --h2-size: 1.7em;
+  --h3-size: 1.4em;
+  --h4-size: 1.2em;
+  --h5-size: 1.05em;
+  --h6-size: 0.75em;
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+  --h1-line-height: 1.2;
+  --h2-line-height: 1.25;
+  --h3-line-height: 1.3;
+  --h4-line-height: 1.35;
+  --h5-line-height: 1.4;
+  --h6-line-height: 1.4;
+  --h1-color: rgb(var(--lua-heading));
+  --h2-color: rgb(var(--lua-heading));
+  --h3-color: rgb(var(--lua-heading));
+  --h4-color: rgb(var(--lua-heading));
+  --h5-color: rgb(var(--lua-heading));
+  --h6-color: rgb(var(--lua-overlay2));
+
+  --line-height-normal: var(--lua-line-height, 1.7);
+  --bold-color: rgb(var(--lua-heading));
+  --text-highlight-bg: rgba(var(--lua-accent), 0.28);
+
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-active: underline;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
+  --link-external-decoration-active: underline;
+
+  --list-marker-color: rgb(var(--lua-accent));
+  --list-marker-color-hover: rgb(var(--lua-accent));
+  --list-marker-color-collapsed: rgb(var(--lua-accent));
+  --list-bullet-size: 6px;
+  --checkbox-radius: var(--radius-s);
+
+  --callout-radius: var(--radius-m);
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.3;
+  --callout-padding: 0.9em 1.1em;
+  --callout-title-size: 0.9em;
+  --callout-title-weight: 600;
+  --callout-blend-mode: normal;
+
+  --metadata-background: rgba(var(--lua-surface0), 0.4);
+  --metadata-border-width: 1px;
+  --metadata-border-color: var(--lua-border);
+  --metadata-border-radius: var(--radius-m);
+  --metadata-padding: var(--size-4-3) var(--size-4-4);
+  --metadata-divider-width: 0px;
+  --metadata-label-text-color: rgb(var(--lua-overlay2));
+  --metadata-property-radius: var(--radius-s);
+  --metadata-property-background-hover: rgba(var(--lua-text), 0.05);
+  --metadata-property-background-active: rgba(var(--lua-accent), 0.1);
+
+  --pill-background: rgba(var(--lua-accent), 0.14);
+  --pill-background-hover: rgba(var(--lua-accent), 0.24);
+  --pill-color: rgb(var(--lua-accent));
+  --pill-color-hover: rgb(var(--lua-accent));
+  --pill-color-remove: rgba(var(--lua-accent), 0.7);
+  --pill-border-width: 0px;
+  --pill-radius: var(--radius-s);
+
+  --code-background: rgba(var(--lua-surface0), 0.7);
+  --code-normal: rgb(var(--lua-subtext));
+  --code-comment: rgb(var(--lua-overlay1));
+  --code-punctuation: rgb(var(--lua-overlay2));
+  --code-property: rgb(var(--lua-teal));
+  --code-string: rgb(var(--lua-green));
+  --code-value: rgb(var(--lua-peach));
+  --code-important: rgb(var(--lua-peach));
+  --code-keyword: rgb(var(--lua-mauve));
+  --code-function: rgb(var(--lua-blue));
+  --code-operator: rgb(var(--lua-sky));
+  --code-tag: rgb(var(--lua-red));
+}
+
+body.theme-dark.lua-text-sm .workspace-leaf-content[data-type="markdown"] { --font-text-size: 14px; }
+body.theme-dark.lua-text-lg .workspace-leaf-content[data-type="markdown"] { --font-text-size: 18px; }
+body.theme-dark.lua-text-xl .workspace-leaf-content[data-type="markdown"] { --font-text-size: 20px; }
+
+body.theme-dark.lua-no-ligatures .markdown-rendered :is(code, pre),
+body.theme-dark.lua-no-ligatures .markdown-source-view.mod-cm6 :is(.cm-inline-code, .HyperMD-codeblock) {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+body.theme-dark .markdown-rendered h6,
+body.theme-dark .HyperMD-header-6 .cm-header-6 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+body.theme-dark .markdown-rendered del,
+body.theme-dark .cm-strikethrough {
+  color: rgb(var(--lua-overlay1));
+  text-decoration-color: rgba(var(--lua-overlay1), 0.7);
+}
+body.theme-dark hr {
+  border: 0;
+  height: 1px;
+  background: var(--lua-border);
+}
+
+body.theme-dark .markdown-rendered mark {
+  border-radius: var(--radius-s);
+  padding: 0.12em 0.45em;
+  color: rgb(var(--lua-text));
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+body.theme-dark .cm-highlight {
+  border-radius: var(--radius-s);
+}
+
+body.theme-dark mark[style*="background"] {
+  background-image: linear-gradient(rgba(var(--lua-base), 0.28), rgba(var(--lua-base), 0.28));
+}
+body.theme-dark .markdown-rendered p:has(mark) {
+  line-height: 2;
+}
+
+body.theme-dark .markdown-rendered ol > li::marker {
+  color: rgb(var(--lua-overlay2));
+}
+
+:where(body.theme-dark) .callout {
+  --lua-cc: var(--lua-pc-nevoa);
+  --callout-color: var(--lua-pc-nevoa);
+  --callout-icon: lucide-sticky-note;
+}
+body.theme-dark .callout:is([data-callout="note" i], [data-callout="info" i], [data-callout="todo" i], [data-callout="nota" i], [data-callout="informacao" i], [data-callout="informação" i], [data-callout="tarefa" i]) {
+  --lua-cc: var(--lua-blue);
+  --callout-color: var(--lua-blue);
+}
+body.theme-dark .callout:is([data-callout="abstract" i], [data-callout="summary" i], [data-callout="tldr" i], [data-callout="tip" i], [data-callout="hint" i], [data-callout="important" i], [data-callout="resumo" i], [data-callout="dica" i], [data-callout="importante" i]) {
+  --lua-cc: var(--lua-teal);
+  --callout-color: var(--lua-teal);
+}
+body.theme-dark .callout:is([data-callout="success" i], [data-callout="check" i], [data-callout="done" i], [data-callout="sucesso" i], [data-callout="concluido" i], [data-callout="concluído" i], [data-callout="feito" i]) {
+  --lua-cc: var(--lua-green);
+  --callout-color: var(--lua-green);
+}
+body.theme-dark .callout:is([data-callout="question" i], [data-callout="help" i], [data-callout="faq" i], [data-callout="warning" i], [data-callout="caution" i], [data-callout="attention" i], [data-callout="pergunta" i], [data-callout="ajuda" i], [data-callout="aviso" i], [data-callout="atencao" i], [data-callout="atenção" i], [data-callout="cuidado" i]) {
+  --lua-cc: var(--lua-peach);
+  --callout-color: var(--lua-peach);
+}
+body.theme-dark .callout:is([data-callout="failure" i], [data-callout="fail" i], [data-callout="missing" i], [data-callout="danger" i], [data-callout="error" i], [data-callout="bug" i], [data-callout="erro" i], [data-callout="falha" i], [data-callout="perigo" i], [data-callout="problema" i]) {
+  --lua-cc: var(--lua-red);
+  --callout-color: var(--lua-red);
+}
+body.theme-dark .callout:is([data-callout="example" i], [data-callout="exemplo" i]) {
+  --lua-cc: var(--lua-mauve);
+  --callout-color: var(--lua-mauve);
+}
+body.theme-dark .callout:is([data-callout="quote" i], [data-callout="cite" i], [data-callout="citacao" i], [data-callout="citação" i]) {
+  --lua-cc: var(--lua-pc-nevoa);
+  --callout-color: var(--lua-pc-nevoa);
+}
+
+body.theme-dark .callout:is([data-callout="note" i], [data-callout="nota" i]) {
+  --callout-icon: lucide-pencil;
+}
+body.theme-dark .callout:is([data-callout="informacao" i], [data-callout="informação" i]) {
+  --callout-icon: lucide-info;
+}
+body.theme-dark .callout:is([data-callout="tarefa" i]) {
+  --callout-icon: lucide-check-circle-2;
+}
+body.theme-dark .callout:is([data-callout="resumo" i]) {
+  --callout-icon: lucide-clipboard-list;
+}
+body.theme-dark .callout:is([data-callout="dica" i], [data-callout="importante" i]) {
+  --callout-icon: lucide-flame;
+}
+body.theme-dark .callout:is([data-callout="sucesso" i], [data-callout="concluido" i], [data-callout="concluído" i], [data-callout="feito" i]) {
+  --callout-icon: lucide-check;
+}
+body.theme-dark .callout:is([data-callout="pergunta" i], [data-callout="ajuda" i]) {
+  --callout-icon: lucide-help-circle;
+}
+body.theme-dark .callout:is([data-callout="aviso" i], [data-callout="atencao" i], [data-callout="atenção" i], [data-callout="cuidado" i]) {
+  --callout-icon: lucide-alert-triangle;
+}
+body.theme-dark .callout:is([data-callout="erro" i], [data-callout="falha" i]) {
+  --callout-icon: lucide-x;
+}
+body.theme-dark .callout:is([data-callout="perigo" i]) {
+  --callout-icon: lucide-zap;
+}
+body.theme-dark .callout:is([data-callout="problema" i]) {
+  --callout-icon: lucide-bug;
+}
+body.theme-dark .callout:is([data-callout="exemplo" i]) {
+  --callout-icon: lucide-list;
+}
+body.theme-dark .callout:is([data-callout="citacao" i], [data-callout="citação" i]) {
+  --callout-icon: quote-glyph;
+}
+
+body.theme-dark .callout-icon {
+  color: rgb(var(--lua-cc));
+}
+
+body.theme-dark .callout {
+  background:
+    linear-gradient(rgba(var(--lua-cc), 0.06), rgba(var(--lua-cc), 0.06)),
+    rgb(var(--lua-mantle)) !important;
+  background-clip: padding-box;
+  mix-blend-mode: normal;
+}
+
+body.theme-dark .callout {
+  border-color: rgba(var(--lua-cc), var(--callout-border-opacity, 0.3));
+}
+body.theme-dark .callout-title {
+  color: rgb(var(--lua-cc));
+}
+
+body.theme-dark.lua-callout-2 .callout {
+  border-width: 0 0 0 3px;
+  border-color: rgb(var(--lua-cc)) !important;
+  border-radius: var(--radius-s);
+}
+
+body.theme-dark.lua-callout-3 .callout {
+  padding: 0;
+  border-color: rgba(var(--lua-cc), 0.35) !important;
+}
+body.theme-dark.lua-callout-3 .callout-title {
+  padding: 0.55em 1.1em;
+  background: rgba(var(--lua-cc), 0.14);
+}
+body.theme-dark.lua-callout-3 .callout-content {
+  padding: 0.8em 1.1em;
+}
+
+body.theme-dark.lua-callout-8 .callout {
+  border-width: 0 0 0 1px;
+  border-color: rgba(var(--lua-cc), 0.6) !important;
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: 0.6em 1em 0.6em 1.1em;
+}
+body.theme-dark.lua-callout-8 .callout-icon {
+  display: none;
+}
+body.theme-dark.lua-callout-8 .callout-title {
+  padding-bottom: 0.4em;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body.theme-dark.lua-callout-9 .callout {
+  position: relative;
+  overflow: visible;
+  margin-top: 1.7em;
+  padding-top: 1.5em;
+  border-color: rgba(var(--lua-cc), 0.35) !important;
+}
+body.theme-dark.lua-callout-9 .callout-title {
+  position: absolute;
+  top: -0.95em;
+  left: 0.8em;
+  gap: 0.4em;
+  padding: 0.15em 0.8em 0.15em 0.6em;
+
+  border-radius: var(--radius-m);
+  background: rgb(var(--lua-cc));
+  color: rgb(var(--lua-crust));
+}
+body.theme-dark.lua-callout-9 .callout-fold {
+  display: none;
+}
+
+body.theme-dark.lua-callout-10 .callout {
+  border-width: 3px 0 0 0;
+  border-color: rgb(var(--lua-cc)) !important;
+  border-radius: var(--radius-m);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .markdown-rendered pre {
+  border: 0;
+  border-radius: var(--radius-m);
+  padding: 1em 1.2em;
+}
+body.theme-dark .markdown-rendered :not(pre) > code {
+  border-radius: var(--radius-s);
+  padding: 0.1em 0.4em;
+}
+body.theme-dark .markdown-rendered .code-block-flair {
+  color: rgb(var(--lua-overlay0));
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  border-top-left-radius: var(--radius-m);
+  border-top-right-radius: var(--radius-m);
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+}
+
+body.theme-dark .metadata-container input[type="text"],
+body.theme-dark .metadata-container input[type="number"],
+body.theme-dark .metadata-container input[type="date"],
+body.theme-dark .metadata-container input[type="datetime-local"],
+body.theme-dark .metadata-container textarea,
+body.theme-dark .metadata-container .metadata-input-longtext {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: var(--radius-s);
+}
+body.theme-dark .metadata-container input[type="text"]:hover,
+body.theme-dark .metadata-container input[type="number"]:hover,
+body.theme-dark .metadata-container input[type="date"]:hover,
+body.theme-dark .metadata-container input[type="datetime-local"]:hover,
+body.theme-dark .metadata-container textarea:hover {
+  background: rgba(var(--lua-text), 0.05);
+}
+body.theme-dark .metadata-container input[type="text"]:focus,
+body.theme-dark .metadata-container input[type="number"]:focus,
+body.theme-dark .metadata-container input[type="date"]:focus,
+body.theme-dark .metadata-container input[type="datetime-local"]:focus,
+body.theme-dark .metadata-container textarea:focus {
+  background: rgba(var(--lua-text), 0.06);
+  box-shadow: 0 0 0 2px rgba(var(--lua-accent), 0.35);
+}
+body.theme-dark .metadata-properties-heading {
+  color: rgb(var(--lua-heading));
+  font-weight: 600;
+}
+body.theme-dark .metadata-add-button {
+  color: rgb(var(--lua-overlay2));
+}
+body.theme-dark .metadata-add-button:hover {
+  color: rgb(var(--lua-accent));
+}
+
+body.theme-dark .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline:not(.is-unresolved),
+body.theme-dark .markdown-source-view.mod-cm6 .cm-link .cm-underline,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-url .cm-underline,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-underline:not(.is-unresolved) {
+  text-decoration: none;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline:not(.is-unresolved):hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-link .cm-underline:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-url .cm-underline:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-underline:not(.is-unresolved):hover {
+  text-decoration: underline;
+}
+
+body.theme-dark {
+  --lua-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --lua-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --lua-fast: calc(140ms * var(--lua-motion-speed, 1));
+  --lua-med: calc(220ms * var(--lua-motion-speed, 1));
+  --lua-slow: calc(300ms * var(--lua-motion-speed, 1));
+}
+@keyframes lua-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lua-pop {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes lua-drop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+body.theme-dark .workspace-tab-header {
+  transition:
+    background-color var(--lua-med) var(--lua-ease),
+    box-shadow var(--lua-med) var(--lua-ease),
+    color var(--lua-med) var(--lua-ease);
+}
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  transition:
+    flex-basis var(--lua-slow) var(--lua-ease-out),
+    max-width var(--lua-slow) var(--lua-ease-out),
+    background-color var(--lua-med) var(--lua-ease),
+    box-shadow var(--lua-med) var(--lua-ease),
+    color var(--lua-med) var(--lua-ease);
+}
+body.theme-dark .workspace-tab-header-inner-close-button,
+body.theme-dark .workspace-tab-header-inner-icon {
+  transition:
+    opacity var(--lua-fast) var(--lua-ease),
+    background-color var(--lua-fast) var(--lua-ease),
+    color var(--lua-fast) var(--lua-ease);
+}
+
+body.theme-dark.lua-smooth-scroll .markdown-preview-view {
+  scroll-behavior: smooth;
+}
+
+body.theme-dark .nav-folder-title,
+body.theme-dark .nav-file-title,
+body.theme-dark .tree-item-self {
+  transition:
+    background-color var(--lua-fast) var(--lua-ease),
+    color var(--lua-fast) var(--lua-ease);
+}
+body.theme-dark .collapse-icon svg,
+body.theme-dark .nav-folder-collapse-indicator svg {
+  transition: transform var(--lua-med) var(--lua-ease-out);
+}
+
+body.theme-dark button,
+body.theme-dark .clickable-icon,
+body.theme-dark input[type="text"],
+body.theme-dark input[type="search"],
+body.theme-dark input[type="number"],
+body.theme-dark textarea,
+body.theme-dark select,
+body.theme-dark .dropdown,
+body.theme-dark .suggestion-item,
+body.theme-dark .menu-item {
+  transition:
+    background-color var(--lua-fast) var(--lua-ease),
+    border-color var(--lua-fast) var(--lua-ease),
+    color var(--lua-fast) var(--lua-ease),
+    box-shadow var(--lua-fast) var(--lua-ease),
+    transform var(--lua-fast) var(--lua-ease);
+}
+body.theme-dark button:not(.clickable-icon):active {
+  transform: scale(0.97);
+}
+body.theme-dark .workspace-leaf-resize-handle {
+  transition: background-color var(--lua-med) var(--lua-ease);
+}
+body.theme-dark a,
+body.theme-dark .internal-link,
+body.theme-dark .cm-hmd-internal-link {
+  transition: color var(--lua-fast) var(--lua-ease);
+}
+
+body.theme-dark input[type="checkbox"] {
+  transition:
+    background-color var(--lua-fast) var(--lua-ease),
+    border-color var(--lua-fast) var(--lua-ease),
+    box-shadow var(--lua-fast) var(--lua-ease);
+}
+
+body.theme-dark .modal,
+body.theme-dark .prompt,
+body.theme-dark .notice {
+  animation: lua-pop var(--lua-med) var(--lua-ease-out) both;
+}
+body.theme-dark .menu,
+body.theme-dark .suggestion-container {
+  animation: lua-drop var(--lua-med) var(--lua-ease-out) both;
+}
+body.theme-dark .modal-bg {
+  animation: lua-fade var(--lua-med) var(--lua-ease) both;
+}
+body.theme-dark .tooltip {
+  animation: lua-fade var(--lua-fast) var(--lua-ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-dark {
+    --lua-motion-speed: 0 !important;
+  }
+}
+
+body.theme-dark input[type="text"]:focus,
+body.theme-dark input[type="search"]:focus,
+body.theme-dark input[type="number"]:focus,
+body.theme-dark textarea:focus {
+  border-color: rgb(var(--lua-accent));
+  box-shadow: 0 0 0 3px rgba(var(--lua-accent), 0.18);
+}
+body.theme-dark button:not(.clickable-icon):focus-visible,
+body.theme-dark .clickable-icon:focus-visible {
+  box-shadow: 0 0 0 2px rgba(var(--lua-accent), 0.55);
+}
+
+body.theme-dark select option {
+  background: rgb(var(--lua-mantle));
+  color: rgb(var(--lua-text));
+}
+@supports (appearance: base-select) {
+  body.theme-dark select,
+  body.theme-dark select::picker(select) {
+    appearance: base-select;
+  }
+
+  body.theme-dark select {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    background-image: none;
+  }
+  body.theme-dark select::picker-icon {
+    display: none;
+  }
+  body.theme-dark select::picker(select) {
+    background: rgb(var(--lua-mantle));
+    border: 1px solid var(--lua-border);
+    border-radius: var(--radius-m);
+    padding: 4px;
+    margin-top: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--lua-surface2), 0.7) transparent;
+  }
+  body.theme-dark select option {
+    padding: 6px 10px;
+    border-radius: var(--radius-s);
+    color: rgb(var(--lua-text));
+  }
+  body.theme-dark select option:hover,
+  body.theme-dark select option:focus-visible {
+    background: rgba(var(--lua-text), 0.08);
+  }
+  body.theme-dark select option:checked {
+    background: rgba(var(--lua-accent), 0.16);
+    color: rgb(var(--lua-accent));
+  }
+
+  body.theme-dark select option::checkmark {
+    display: none;
+  }
+}
+
+body.theme-dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body.theme-dark ::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body.theme-dark .modal ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body.theme-dark .modal ::-webkit-scrollbar-track {
+  background: transparent;
+}
+body.theme-dark .modal ::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 10px;
+}
+body.theme-dark .modal :hover::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--lua-surface2), 0.7);
+}
+body.theme-dark .modal ::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--lua-overlay0));
+}
+
+body.theme-dark.lua-scroll-hidden ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+body.theme-dark {
+  --canvas-background: rgb(var(--lua-base));
+  --canvas-dot-pattern: rgb(var(--lua-surface2));
+  --canvas-card-label-color: rgb(var(--lua-overlay1));
+
+  --canvas-color-1: var(--lua-red);
+  --canvas-color-2: var(--lua-peach);
+  --canvas-color-3: var(--lua-yellow);
+  --canvas-color-4: var(--lua-green);
+  --canvas-color-5: var(--lua-teal);
+  --canvas-color-6: var(--lua-mauve);
+}
+
+:where(body.theme-dark) :is(.canvas-wrapper, .canvas-node, .canvas-edge, .canvas-edges) {
+  --canvas-color: rgba(var(--lua-accent), 0.7);
+}
+
+body.theme-dark .canvas-node-container {
+  border-radius: var(--radius-m);
+}
+
+body.theme-dark .canvas-node:not(.is-focused):not(.is-selected):not([data-canvas-color]):not([style*="--canvas-color"]) .canvas-node-container {
+  border-color: rgba(var(--lua-accent), 0.55);
+  background-color: rgb(var(--lua-mantle));
+}
+body.theme-dark .canvas-node:not(.is-focused):not(.is-selected):not([data-canvas-color]):not([style*="--canvas-color"]):hover .canvas-node-container {
+  border-color: rgba(var(--lua-accent), 0.85);
+}
+body.theme-dark .canvas-edges .canvas-edge:not(.is-focused):not(.is-selected):not([style*="--canvas-color"]) .canvas-display-path {
+  stroke: rgba(var(--lua-accent), 0.7);
+}
+body.theme-dark .canvas-edges .canvas-edge:not(.is-focused):not(.is-selected):not([style*="--canvas-color"]) :is(polygon, .canvas-path-end) {
+  fill: rgba(var(--lua-accent), 0.7);
+}
+
+body.theme-dark .canvas-control-group,
+body.theme-dark .canvas-card-menu {
+  background: rgba(var(--lua-mantle), 0.92);
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+body.theme-dark .canvas-control-item {
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-s);
+}
+body.theme-dark .canvas-control-item:hover,
+body.theme-dark .canvas-card-menu .canvas-card-menu-button:hover {
+  background: rgba(var(--lua-text), 0.08);
+}
+
+body.theme-dark {
+
+  --bases-table-container-border-width: 1px;
+  --bases-table-container-border-radius: var(--radius-m);
+  --bases-table-border-color: var(--lua-border-soft);
+  --bases-table-column-border-width: 1px;
+  --bases-table-row-border-width: 1px;
+  --bases-table-header-background: rgb(var(--lua-surface0));
+  --bases-table-header-background-hover: rgb(var(--lua-surface1));
+  --bases-table-header-color: rgb(var(--lua-heading));
+  --bases-table-row-background-hover: rgba(var(--lua-accent), 0.06);
+  --bases-table-cell-background-active: rgb(var(--lua-surface0));
+  --bases-table-cell-background-disabled: rgb(var(--lua-mantle));
+
+  --bases-cards-container-background: transparent;
+  --bases-cards-background: rgb(var(--lua-mantle));
+  --bases-cards-cover-background: rgb(var(--lua-surface0));
+  --bases-cards-shadow: 0 0 0 1px var(--lua-border);
+  --bases-cards-shadow-hover: 0 0 0 1px rgb(var(--lua-accent));
+}
+
+body.theme-dark [class*="bases-"],
+body.theme-dark [data-type="bases"] {
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-active: underline;
+}
+body.theme-dark [class*="bases-"] a,
+body.theme-dark [class*="bases-"] .internal-link,
+body.theme-dark [data-type="bases"] a,
+body.theme-dark [data-type="bases"] .internal-link {
+  text-decoration: none;
+}
+body.theme-dark [class*="bases-"] a:hover,
+body.theme-dark [class*="bases-"] .internal-link:hover,
+body.theme-dark [data-type="bases"] a:hover,
+body.theme-dark [data-type="bases"] .internal-link:hover {
+  text-decoration: underline;
+}
+
+body.theme-dark .bases-cards-item {
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+body.theme-dark .kanban-plugin__lane {
+  background: rgb(var(--lua-mantle));
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-m);
+}
+body.theme-dark .kanban-plugin__item-title-wrapper {
+  background: rgb(var(--lua-surface0));
+  border: 1px solid var(--lua-border);
+  border-radius: var(--radius-s);
+}
+
+body.theme-dark.is-mobile .markdown-rendered .el-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+body.theme-dark.is-mobile button:not(.clickable-icon) {
+  min-height: 40px;
+}
+
+@media print {
+  body.theme-dark {
+    --lua-text: 40, 38, 56;
+    --lua-heading: 15, 14, 28;
+    --lua-subtext: 70, 68, 92;
+    --lua-overlay2: 95, 93, 120;
+    --lua-overlay1: 105, 103, 130;
+    --lua-overlay0: 115, 113, 140;
+    --lua-surface2: 205, 203, 222;
+    --lua-surface1: 225, 223, 238;
+    --lua-surface0: 240, 239, 248;
+    --lua-base: 255, 255, 255;
+    --lua-mantle: 248, 247, 252;
+    --lua-crust: 244, 243, 250;
+    --lua-accent: 98, 66, 196;
+    color-scheme: light;
+  }
+}
+
+body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  clip-path: inset(var(--header-height) 0 0 0);
+}
+body.theme-dark .workspace-split.mod-vertical > .workspace-tabs:not(:last-child) > .workspace-leaf-resize-handle {
+  clip-path: polygon(
+    0 6px, 100% 6px, 100% calc(var(--header-height) - 6px), 0 calc(var(--header-height) - 6px),
+    0 var(--header-height), 100% var(--header-height), 100% 100%, 0 100%
+  );
+}
+
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-split.mod-vertical > .workspace-tabs:not(:first-child) .workspace-tab-header-container-inner,
+body.theme-dark:not(.lua-tabs-classic) .workspace-split.mod-vertical.mod-root > .workspace-tabs:not(:first-child) .workspace-tab-header-container-inner {
+  padding-left: 10px;
+}
+
+body.theme-dark:not(.lua-tabs-classic) .mod-root .workspace-tabs:not(.mod-active):not(.mod-stacked) .workspace-tab-header.is-active {
+  background: rgba(var(--lua-surface0), 0.8);
+  box-shadow: inset 0 -2px 0 rgba(var(--lua-accent), 0.25);
+}
+
+body.theme-dark .workspace-tabs.mod-stacked .workspace-tab-header {
+  background: rgb(var(--lua-surface0));
+  border: 0;
+  border-top: 3px solid var(--lua-border);
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+body.theme-dark .workspace-tabs.mod-stacked .workspace-tab-header:not(.is-active):hover {
+  background: rgb(var(--lua-surface1));
+  border-top-color: rgba(var(--lua-accent), 0.5);
+}
+body.theme-dark .workspace-tabs.mod-stacked .workspace-tab-header.is-active {
+  background: rgb(var(--lua-surface1));
+  border-top-color: rgb(var(--lua-accent));
+}
+
+body.theme-dark .workspace-tabs.mod-stacked .workspace-tab-container > .workspace-leaf {
+  box-shadow: -6px 0 12px -6px rgba(0, 0, 0, 0.6);
+}
+
+body.theme-dark input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked,
+body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked,
+body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked {
+  background-color: rgba(var(--lua-tk), 0.16);
+  border-color: rgba(var(--lua-tk), 0.9);
+}
+body.theme-dark input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked::after,
+body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked::after,
+body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked::after {
+  background-color: rgb(var(--lua-tk));
+  -webkit-mask-image: var(--lua-tk-glyph);
+  mask-image: var(--lua-tk-glyph);
+  -webkit-mask-size: 76%;
+  mask-size: 76%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+body.theme-dark li:is([data-task="/"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]),
+body.theme-dark .HyperMD-task-line:is([data-task="/"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) {
+  --checklist-done-decoration: none;
+  --checklist-done-color: var(--text-normal);
+}
+body.theme-dark li[data-task="-"],
+body.theme-dark .HyperMD-task-line[data-task="-"] {
+  --checklist-done-decoration: line-through;
+  --checklist-done-color: rgb(var(--lua-overlay0));
+}
+
+body.theme-dark input[data-task="/"]:checked,
+body.theme-dark li[data-task="/"] > input:checked,
+body.theme-dark li[data-task="/"] > p > input:checked {
+  --lua-tk: var(--lua-peach);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8' stroke-width='2.6'/%3E%3Cpath d='M12 4a8 8 0 0 1 0 16z' fill='black' stroke='none'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="-"]:checked,
+body.theme-dark li[data-task="-"] > input:checked,
+body.theme-dark li[data-task="-"] > p > input:checked {
+  --lua-tk: var(--lua-overlay0);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12h12'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task=">"]:checked,
+body.theme-dark li[data-task=">"] > input:checked,
+body.theme-dark li[data-task=">"] > p > input:checked {
+  --lua-tk: var(--lua-teal);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="<"]:checked,
+body.theme-dark li[data-task="<"] > input:checked,
+body.theme-dark li[data-task="<"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5' width='16' height='15' rx='2.5' stroke-width='2.6'/%3E%3Cpath d='M4 10.5h16M9 3v4M15 3v4' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="!"]:checked,
+body.theme-dark li[data-task="!"] > input:checked,
+body.theme-dark li[data-task="!"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v9'/%3E%3Cpath d='M12 19h.01'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="?"]:checked,
+body.theme-dark li[data-task="?"] > input:checked,
+body.theme-dark li[data-task="?"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.4 9.2a2.7 2.7 0 0 1 5.1 1.2c0 1.8-2.5 2.2-2.5 3.9'/%3E%3Cpath d='M12 19h.01'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="*"]:checked,
+body.theme-dark li[data-task="*"] > input:checked,
+body.theme-dark li[data-task="*"] > p > input:checked {
+  --lua-tk: var(--lua-pink);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3.5 2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8z' fill='black' stroke-width='1.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="i"]:checked,
+body.theme-dark li[data-task="i"] > input:checked,
+body.theme-dark li[data-task="i"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 11v6'/%3E%3Cpath d='M12 7h.01'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="b"]:checked,
+body.theme-dark li[data-task="b"] > input:checked,
+body.theme-dark li[data-task="b"] > p > input:checked {
+  --lua-tk: var(--lua-mauve);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.5 4.5h9v15L12 16l-4.5 3.5z' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="l"]:checked,
+body.theme-dark li[data-task="l"] > input:checked,
+body.theme-dark li[data-task="l"] > p > input:checked {
+  --lua-tk: var(--lua-teal);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20.5s6-5.2 6-9.7a6 6 0 0 0-12 0c0 4.5 6 9.7 6 9.7z' stroke-width='2.6'/%3E%3Ccircle cx='12' cy='10.8' r='2' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="p"]:checked,
+body.theme-dark li[data-task="p"] > input:checked,
+body.theme-dark li[data-task="p"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="c"]:checked,
+body.theme-dark li[data-task="c"] > input:checked,
+body.theme-dark li[data-task="c"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.5 7.5l9 9M16.5 7.5l-9 9'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="I"]:checked,
+body.theme-dark li[data-task="I"] > input:checked,
+body.theme-dark li[data-task="I"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 18h5M10.2 21h3.6' stroke-width='2.6'/%3E%3Cpath d='M8.3 14.3a5.5 5.5 0 1 1 7.4 0c-.8.8-1.3 1.5-1.3 2.2H9.6c0-.7-.5-1.4-1.3-2.2z' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="f"]:checked,
+body.theme-dark li[data-task="f"] > input:checked,
+body.theme-dark li[data-task="f"] > p > input:checked {
+  --lua-tk: var(--lua-peach);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.5c.8 3 5 5 5 9.5a5 5 0 0 1-10 0c0-2 .9-3.2 2-4.2 0 1.8.8 2.8 1.8 3 .2-2.8-1-5.3 1.2-8.3z' stroke-width='2.4'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="k"]:checked,
+body.theme-dark li[data-task="k"] > input:checked,
+body.theme-dark li[data-task="k"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='15.5' r='3.5' stroke-width='2.6'/%3E%3Cpath d='M10.5 13 19 4.5M16 7.5l3 3'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="w"]:checked,
+body.theme-dark li[data-task="w"] > input:checked,
+body.theme-dark li[data-task="w"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4.5h8v4.5a4 4 0 0 1-8 0z' stroke-width='2.6'/%3E%3Cpath d='M8 6.5H5v1a3 3 0 0 0 3 3M16 6.5h3v1a3 3 0 0 1-3 3M12 13v4M9 20h6' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="u"]:checked,
+body.theme-dark li[data-task="u"] > input:checked,
+body.theme-dark li[data-task="u"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V6'/%3E%3Cpath d='m6 11 6-6 6 6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="d"]:checked,
+body.theme-dark li[data-task="d"] > input:checked,
+body.theme-dark li[data-task="d"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v13'/%3E%3Cpath d='m6 13 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="S"]:checked,
+body.theme-dark li[data-task="S"] > input:checked,
+body.theme-dark li[data-task="S"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v16' stroke-width='2.6'/%3E%3Cpath d='M16 8.5c0-1.5-1.8-2.5-4-2.5s-4 1-4 2.5 1.8 2.3 4 2.8 4 1.3 4 2.8-1.8 2.5-4 2.5-4-1-4-2.5' stroke-width='2.6'/%3E%3C/svg%3E");
+}
+
+body.theme-dark input[data-task="\""]:checked,
+body.theme-dark li[data-task="\""] > input:checked,
+body.theme-dark li[data-task="\""] > p > input:checked {
+  --lua-tk: var(--lua-mauve);
+  --lua-tk-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 18v-4.5c0-3 1.5-5 4-6.5M14 18v-4.5c0-3 1.5-5 4-6.5'/%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input.task-list-item-checkbox {
+  background-color: rgb(var(--lua-overlay0));
+  border: 0;
+  box-shadow: none;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E");
+}
+body.theme-dark.lua-tasks-lucide input.task-list-item-checkbox:hover {
+  background-color: rgb(var(--lua-accent));
+}
+body.theme-dark.lua-tasks-lucide input.task-list-item-checkbox::after,
+body.theme-dark.lua-tasks-lucide input.task-list-item-checkbox:checked::after {
+  display: none !important;
+}
+
+body.theme-dark.lua-tasks-lucide input.task-list-item-checkbox:checked {
+  background-color: rgb(var(--lua-accent));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked,
+body.theme-dark.lua-tasks-lucide li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked,
+body.theme-dark.lua-tasks-lucide li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked {
+  background-color: rgb(var(--lua-tk));
+  border: 0;
+  -webkit-mask-image: var(--lua-tk-lucide);
+  mask-image: var(--lua-tk-lucide);
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="/"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="/"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="/"] > p > input:checked {
+  --lua-tk: var(--lua-peach);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath fill='black' d='M12 18a6 6 0 0 0 0-12v12z'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="-"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="-"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="-"] > p > input:checked {
+  --lua-tk: var(--lua-overlay0);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M8 12h8'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task=">"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task=">"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task=">"] > p > input:checked {
+  --lua-tk: var(--lua-teal);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='m12 16 4-4-4-4'/%3E%3Cpath d='M8 12h8'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="<"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="<"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="<"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M3 10h18'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Crect width='18' height='18' x='3' y='4' rx='2'/%3E%3C/g%3E%3Cg stroke='black'%3E%3Cpath d='M8 2v4'/%3E%3Cpath d='M16 2v4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="!"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="!"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="!"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M12 8v4'/%3E%3Cpath d='M12 16h.01'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="?"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="?"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="?"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3'/%3E%3Cpath d='M12 17h.01'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="*"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="*"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="*"] > p > input:checked {
+  --lua-tk: var(--lua-pink);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="i"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="i"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="i"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="b"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="b"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="b"] > p > input:checked {
+  --lua-tk: var(--lua-mauve);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="l"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="l"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="l"] > p > input:checked {
+  --lua-tk: var(--lua-teal);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Ccircle fill='black' cx='12' cy='10' r='3'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="p"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="p"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="p"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M8 12h8'/%3E%3Cpath d='M12 8v8'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="c"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="c"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="c"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="I"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="I"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="I"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5z'/%3E%3C/g%3E%3Cg stroke='black'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="f"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="f"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="f"] > p > input:checked {
+  --lua-tk: var(--lua-peach);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="k"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="k"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="k"] > p > input:checked {
+  --lua-tk: var(--lua-blue);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='7.5' cy='15.5' r='5.5'/%3E%3C/g%3E%3Cg stroke='black'%3E%3Cpath d='m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4'/%3E%3Cpath d='m21 2-9.6 9.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="w"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="w"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="w"] > p > input:checked {
+  --lua-tk: var(--lua-yellow);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M18 2H6v7a6 6 0 0 0 12 0V2Z'/%3E%3C/g%3E%3Cg stroke='black'%3E%3Cpath d='M6 9H4.5a2.5 2.5 0 0 1 0-5H6'/%3E%3Cpath d='M18 9h1.5a2.5 2.5 0 0 0 0-5H18'/%3E%3Cpath d='M4 22h16'/%3E%3Cpath d='M10 14.66V17c0 .55-.47.98-1.04 1.21C7.85 18.75 7 20.24 7 22'/%3E%3Cpath d='M14 14.66V17c0 .55.47.98 1.04 1.21C16.15 18.75 17 20.24 17 22'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="u"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="u"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="u"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='m16 12-4-4-4 4'/%3E%3Cpath d='M12 16V8'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="d"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="d"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="d"] > p > input:checked {
+  --lua-tk: var(--lua-red);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="S"]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="S"] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="S"] > p > input:checked {
+  --lua-tk: var(--lua-green);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3Cpath d='M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8'/%3E%3Cpath d='M12 18V6'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark.lua-tasks-lucide input[data-task="\""]:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="\""] > input:checked,
+body.theme-dark.lua-tasks-lucide li[data-task="\""] > p > input:checked {
+  --lua-tk: var(--lua-mauve);
+  --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z'/%3E%3Cpath d='M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z'/%3E%3C/g%3E%3C/svg%3E");
+}
