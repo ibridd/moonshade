@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-    <img src="assets/moonshade-screenshot.svg" width="100%">
+    <img src="assets/moonshade-screenshot.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
 </p>
 
 ---
@@ -27,8 +27,9 @@ Fique à vontade para usar, adaptar ao seu gosto e sugerir melhorias. Seja bem-v
 O Moonshade é simples de propósito: não reinventa o Obsidian, só o deixa mais calmo para escrever à noite. Os detalhes que ele cuida:
 
 - **Só modo escuro**, em roxo bem escuro, com dois tons de fundo.
-- **Doze paletas** que trocam de uma vez o destaque e as cores de pastas e arquivos, e uma opção para trocar só a cor de destaque.
+- **Doze paletas** que trocam de uma vez a cor de destaque e as cores das pastas. Os arquivos mantêm uma cor fixa.
 - **Cantos arredondados** ajustáveis de 0 a 20 px em abas, botões, tabelas, citações e molduras.
+- **Layout plano:** explorador, editor e barra lateral colados, com molduras de cima arredondadas e ligadas por linhas finas. Funciona com tela dividida e com as barras laterais recolhidas.
 - **Explorador com ícones** para pastas, notas, Bases, Canvas, imagens e PDFs, com a extensão (`.png`, `.base`, `.canvas`...) em uma etiqueta discreta no fim da linha. As notas `.md` ficam sem etiqueta.
 - **Abas compactas**, com a aba ativa maior e sublinhada na cor de destaque, ou as abas padrão do Obsidian, se preferir. As abas empilhadas também têm visual próprio.
 - **Seis estilos de callout** à escolha (padrão, barra lateral, cabeçalho em faixa, minimalista, etiqueta e cartão com sombra), com cores e ícones também para os tipos em português (`> [!dica]`, `> [!aviso]`...).
@@ -69,12 +70,11 @@ Com o Style Settings instalado, as opções ficam em _Configurações → Style 
 
 | Grupo | O que você ajusta |
 | --- | --- |
-| **Cores** | Paleta de cores, cor de destaque e tom do fundo |
-| **Formato** | Arredondamento dos cantos, largura do texto da nota e estilo dos callouts |
-| **Abas** | Abas do tema (pílulas) ou abas padrão do Obsidian |
-| **Texto e tabelas** | Tamanho do texto, altura da linha, espaçamento das tabelas e ícones Lucide nos checkboxes |
+| **Cores** | Paleta de cores e tom do fundo |
+| **Formato** | Arredondamento dos cantos e largura do texto da nota |
+| **Texto e tabelas** | Tamanho do texto, altura da linha, espaçamento das tabelas, estilo dos callouts e ícones Lucide nos checkboxes |
 | **Tipografia** | Fonte do texto, dos títulos, da interface e do código, e ligaduras |
-| **Interface** | Barras de rolagem, velocidade das animações, rolagem suave, barra de status, perfil do cofre e botões do explorador clássicos |
+| **Interface** | Barras de rolagem, velocidade das animações, rolagem suave, barra de status, perfil do cofre e botões do explorador clássicos, e abas padrão do Obsidian |
 
 ---
 
@@ -87,7 +87,8 @@ O Moonshade não tem modo claro, mas oferece dois tons de fundo escuros. A escol
 - **Profunda:** o mais escuro, quase preto. Tem mais contraste com o texto e dá um ar mais intenso e marcante ao tema.
 - **Noite:** um degrau mais claro, com um roxo-azulado que deixa tudo mais suave e calmo, como a noite. É a escolha para quem prefere menos contraste.
 
-A opção se chama **Tom do fundo**.
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Tom do fundo._
 
 ---
 
@@ -95,7 +96,10 @@ A opção se chama **Tom do fundo**.
 
 <img src="assets/moonshade-color-palettes.svg" alt="Visão geral das doze paletas de cores do tema"><br>
 
-O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Aurora, Bosque, Mel, Âmbar, Pêssego, Rubi, Crepúsculo e Névoa. Cada uma muda de uma vez a cor de destaque (links, listas, itens selecionados, borda da janela ativa e tags), as pastas e as cores do gráfico. Os arquivos mantêm uma cor fixa. A opção é **Paleta de cores**; para mudar só a cor de links, seleção e item ativo, use **Cor de destaque**, logo abaixo dela.
+O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Aurora, Bosque, Mel, Âmbar, Pêssego, Rubi, Crepúsculo e Névoa. Cada uma muda de uma vez a cor de destaque (links, listas, itens selecionados, borda da janela ativa e tags), as pastas e as cores do gráfico. Os arquivos mantêm uma cor fixa.
+
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Paleta de cores._
 
 ---
 
@@ -103,27 +107,27 @@ O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Auro
 
 <img src="assets/moonshade-callout-styles.svg" alt="Os seis estilos de callout do tema"><br>
 
-Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que muda é só o formato (borda, barra, cabeçalho, etiqueta ou sombra); a cor de cada tipo continua a mesma em todos. Há também cores e ícones para os nomes em português, como `dica`, `aviso`, `erro` e `exemplo`. A opção é **Estilo dos callouts**.
+Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que muda é só o formato (borda, barra, cabeçalho, etiqueta ou sombra); a cor de cada tipo continua a mesma em todos. Há também cores e ícones para os nomes em português, como `dica`, `aviso`, `erro` e `exemplo`.
+
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Estilo dos callouts._
 
 ---
 
-### 🗂️ Explorador e Elementos Flutuantes
+### 📝 Estilo das Notas
 
-<img src="assets/moonshade-file-explorer.svg" alt="Explorador de arquivos com ícones e extensões"><br>
+<img src="assets/moonshade-note-styling.svg" alt="Estilo das notas: títulos, texto, listas, tarefas, tabelas, código e callouts"><br>
 
-Pastas, notas, Bases, Canvas, imagens e PDFs têm ícones próprios, e a extensão aparece numa etiqueta à direita (as notas `.md` ficam sem ela). A cor das pastas segue a paleta; a dos arquivos é fixa.
+O texto da nota foi pensado para leitura longa à noite:
 
-<img src="assets/moonshade-floating-elements.svg" alt="Comparação entre os elementos clássicos e os flutuantes"><br>
+- **Títulos:** degraus de tamanho nítidos do H1 ao H5. O H6 é pequeno e apagado, para servir de rótulo.
+- **Texto corrido:** entrelinha de 1,7 e negrito um pouco mais claro. Os links só sublinham ao passar o mouse, e os que apontam para notas que não existem mantêm a aparência de link não resolvido do Obsidian, para você notar.
+- **Destaques e listas:** o destaque `==assim==` tem fundo suave e cantos arredondados, e os marcadores das listas usam a cor de destaque da paleta.
+- **Tabelas, citações e código:** fundo em tom, borda de 1 px e cantos arredondados, como nos callouts.
+- **Tarefas:** checkbox arredondada e 20 estados extras, explicados na seção _Checkboxes de Tarefa_, logo abaixo.
 
-A barra de status, o perfil do cofre e os botões do explorador flutuam em pílulas, com borda, desfoque e uma sombra suave. Os três podem voltar ao visual clássico, cada um por uma opção própria no Style Settings: barra de status clássica, perfil do cofre clássico e botões do explorador clássicos.
-
----
-
-### 🗃️ Abas
-
-<img src="assets/moonshade-tab-styles.svg" alt="Estilos de abas: Moonshade, padrão do Obsidian e empilhadas"><br>
-
-As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada. Se preferir o estilo do Obsidian, ligue **Abas padrão do Obsidian**; o modo de abas empilhadas tem visual próprio e não muda.
+> [!NOTE]
+> **Para ajustar:** _Configurações → Style Settings → Moonshade._ Em **Formato** ficam a largura do texto e o arredondamento; em **Texto e tabelas**, o tamanho do texto, a altura da linha, o espaçamento das tabelas, o estilo dos callouts e os ícones dos checkboxes; em **Tipografia**, as fontes.
 
 ---
 
@@ -147,6 +151,46 @@ Por padrão, cada estado aparece em uma caixa tingida com a cor dele, e só o ca
 
 Se preferir, ligue **Ícones Lucide nos checkboxes**: some a caixa e fica só o ícone, do mesmo tamanho dela. O pendente vira um círculo vazio, só com o contorno, e o feito e todos os estados extras viram ícones preenchidos na cor do estado.
 
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Ícones Lucide nos checkboxes._
+
+---
+
+### 🧱 Layout Plano
+
+<img src="assets/moonshade-flat-layout.svg" alt="Layout plano com molduras ligadas, tela dividida e divisória na faixa das abas"><br>
+
+O Moonshade não usa painéis soltos em cartões. O explorador, o editor e a barra lateral direita são planos, colados e separados por linhas finas; os cantos de cima são arredondados e as curvas se encontram na divisória, sem vão. A cor de destaque só aparece quando você passa o mouse na divisória para redimensionar.
+
+Na **tela dividida**, a linha entre os painéis é recortada como num navegador: um trecho curto na faixa das abas e o trecho normal logo abaixo, sempre alinhados.
+
+<img src="assets/moonshade-collapsible-sidebars.svg" alt="Barras laterais recolhidas: esquerda oculta e direita oculta"><br>
+
+Com uma barra lateral recolhida, o editor encosta na linha do ribbon (esquerda) ou na borda da janela (direita), como no Obsidian.
+
+---
+
+### 🗂️ Explorador e Elementos Flutuantes
+
+<img src="assets/moonshade-file-explorer.svg" alt="Explorador de arquivos com ícones e extensões"><br>
+
+Pastas, notas, Bases, Canvas, imagens e PDFs têm ícones próprios, e a extensão aparece numa etiqueta à direita (as notas `.md` ficam sem ela). A cor das pastas segue a paleta; a dos arquivos é fixa.
+
+<img src="assets/moonshade-floating-elements.svg" alt="Comparação entre os elementos clássicos e os flutuantes"><br>
+
+A barra de status, o perfil do cofre e os botões do explorador flutuam em pílulas, com borda, desfoque e uma sombra suave. Os três podem voltar ao visual clássico, cada um por uma opção própria no Style Settings: barra de status clássica, perfil do cofre clássico e botões do explorador clássicos.
+
+---
+
+### 🗃️ Abas
+
+<img src="assets/moonshade-tab-styles.svg" alt="Estilos de abas: Moonshade, padrão do Obsidian e empilhadas"><br>
+
+As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada. Se preferir o estilo do Obsidian, ligue **Abas padrão do Obsidian**; o modo de abas empilhadas tem visual próprio e não muda.
+
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Abas padrão do Obsidian._
+
 ---
 
 ### 🧩 Compatibilidade
@@ -154,6 +198,7 @@ Se preferir, ligue **Ícones Lucide nos checkboxes**: some a caixa e fica só o 
 | | |
 | --- | --- |
 | **Obsidian** | 1.4.0 ou superior (a estilização de Bases exige o Obsidian 1.9 ou superior) |
+| **Versão** | 3.13.0 · [notas de versão](https://github.com/ibridd/moonshade/releases) |
 | **Modo** | Somente escuro |
 | **Plugins** | Style Settings (opcional). Canvas, Bases e Kanban estilizados |
 | **Plataforma** | Pensado para desktop. No celular funciona com ajustes básicos |
@@ -183,5 +228,5 @@ Encontrou um bug ou tem uma sugestão? Abra uma [issue](https://github.com/ibrid
 ---
 
 <p align="center">
-    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" widith="100%">
+    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
 </p>
