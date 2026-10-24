@@ -10,7 +10,7 @@
     <img src="assets/EN-us/resources/moonshade-screenshot.svg" alt="Screenshot of Moonshade in Obsidian: file explorer, editor and sidebar" width="100%">
 </p>
 
-## 📑 Contents
+### 📑 Contents
 
 + [📃 Foreword](#-foreword)
 + [✨ Features](#-features)
@@ -30,7 +30,9 @@
 + [📬 Feedback and Support](#-feedback-and-support)
 + [📄 Credits and License](#-credits-and-license)
 
-## 📃 Foreword
+---
+
+### 📃 Foreword
 
 This theme was born from the need for a calm little corner to write at night: a very dark purple, subtle borders and text that doesn't tire the eyes. It was made for my own use first, so it may not cover everything you need. But if it fits the way you write and think, I'm happy to share it with you.
 
@@ -43,7 +45,9 @@ Feel free to use it, adapt it to your taste and suggest improvements. Welcome.
 > [!NOTE]
 > **About the interface language:** the Style Settings menu of the theme is currently in Portuguese. In this document, option names appear in Portuguese, followed by the English meaning in parentheses.
 
-## ✨ Features
+---
+
+### ✨ Features
 
 Moonshade is simple on purpose: it doesn't reinvent Obsidian, it just makes it calmer for writing at night. What it takes care of:
 
@@ -66,7 +70,9 @@ Moonshade is simple on purpose: it doesn't reinvent Obsidian, it just makes it c
 > [!IMPORTANT]
 > The theme exists only in dark mode and applies nothing in Obsidian's light mode.
 
-## 📥 Installation
+---
+
+### 📥 Installation
 
 **From Obsidian:**
 
@@ -81,7 +87,9 @@ Moonshade is simple on purpose: it doesn't reinvent Obsidian, it just makes it c
 
 **Optional:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin to customize the background, palettes and much more.
 
-## 🎛️ Customization
+---
+
+### 🎛️ Customization
 
 With Style Settings installed, the options are in _Settings → Style Settings → Moonshade_.
 
@@ -93,7 +101,9 @@ With Style Settings installed, the options are in _Settings → Style Settings �
 | **Tipografia** (Typography) | Font for text, headings, interface and code, and ligatures |
 | **Interface** | Scrollbars, animation speed, smooth scrolling, classic status bar, vault profile and explorer buttons, and Obsidian's default tabs |
 
-## 🔍 In Detail
+---
+
+### 🔍 In Detail
 
 Each feature below shows how it looks and where to adjust it in Style Settings.
 
@@ -196,7 +206,9 @@ Moonshade's tabs are compact pills, with a larger, underlined active tab. If you
 > [!NOTE]
 > **To change it:** _Settings → Style Settings → Moonshade → **Abas padrão do Obsidian** (Obsidian's default tabs)._
 
-## 🧩 Compatibility
+---
+
+### 🧩 Compatibility
 
 | | |
 | --- | --- |
@@ -206,23 +218,27 @@ Moonshade's tabs are compact pills, with a larger, underlined active tab. If you
 | **Plugins** | Style Settings (optional). Canvas, Bases and Kanban styled |
 | **Platform** | Designed for desktop. On mobile it works with basic adjustments |
 
-## ☕ If you like the theme
+---
+
+### ☕ If you like the theme
 
 It's free and also serves as my way of learning. If you'd like to chip in with a coffee (or save my back and my sleepless nights), the link is here:
 
 <a href="https://www.buymeacoffee.com/ibriddge" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height: 50px !important;width: 200px !important;"></a>
 
-## 📬 Feedback and Support
+---
+
+### 📬 Feedback and Support
 
 Found a bug or have a suggestion? Open an [issue](https://github.com/ibridd/moonshade/issues) in the repository.
 
-## 📄 Credits and License
+---
+
+### 📄 Credits and License
 
 - [MIT](LICENSE) license.
 - File explorer and task checkbox icons based on [Lucide](https://lucide.dev) (ISC license).
 - Customization through the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin, by mgmeyers.
-
----
 
 <p align="center">
     <img src="assets/EN-us/banners/moonshade-footer.svg" alt="Moonshade, a calm little corner for writing at night" width="100%">
