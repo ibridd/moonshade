@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <b>🇧🇷 Português</b> · <a href="README.en.md">🇺🇸 English</a>
+    <img src="assets/PT-br/buttom/lang-toggle-pt.svg">
 </p>
 
 <p align="center">
