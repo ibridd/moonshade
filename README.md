@@ -9,30 +9,10 @@
 </p>
 
 <p align="center">
-    <a href=""><img src="assets/PT-br/buttom/lang-toggle-pt.svg"></a>
+    <b>Portugês / <a href="">Inglês</a></b>
 </p>
 
-## 📑 Sumário
-
-+ [📃 Prefácio](#-prefácio)
-+ [✨ Características](#-características)
-+ [📥 Instalação](#-instalação)
-+ [🎛️ Personalização](#️-personalização)
-+ [🔍 Recursos em Detalhe](#-recursos-em-detalhe)
-    + [🌑 Tons de Fundo](#-tons-de-fundo)
-    + [🎨 Paleta de Cores](#-paleta-de-cores)
-    + [💬 Estilos de Callout](#-estilos-de-callout)
-    + [📝 Estilo das Notas](#-estilo-das-notas)
-    + [✅ Checkboxes de Tarefa](#-checkboxes-de-tarefa)
-    + [🧱 Layout Plano](#-layout-plano)
-    + [🗂️ Explorador e Elementos Flutuantes](#️-explorador-e-elementos-flutuantes)
-    + [🗃️ Abas](#️-abas)
-+ [🧩 Compatibilidade](#-compatibilidade)
-+ [☕ Caso você goste do tema](#-caso-você-goste-do-tema)
-+ [📬 Feedback e Suporte](#-feedback-e-suporte)
-+ [📄 Créditos e Licença](#-créditos-e-licença)
-
-## 📃 Prefácio
+### 📃 Prefácio
 
 Este tema nasceu da necessidade de ter um cantinho calmo para escrever à noite: um roxo bem escuro, bordas discretas e um texto que não cansa os olhos. Foi feito primeiro para o meu próprio uso, então talvez não atenda a tudo o que você precisa. Mas, se ele combinar com o seu jeito de escrever e pensar, fico feliz em dividi-lo com você.
 
@@ -42,7 +22,9 @@ Ele também é fruto de aprendizado. Usei ferramentas de IA como companhia duran
 
 Fique à vontade para usar, adaptar ao seu gosto e sugerir melhorias. Seja bem-vindo(a).
 
-## ✨ Características
+---
+
+### ✨ Características
 
 O Moonshade é simples de propósito: não reinventa o Obsidian, só o deixa mais calmo para escrever à noite. Os detalhes que ele cuida:
 
@@ -65,7 +47,9 @@ O Moonshade é simples de propósito: não reinventa o Obsidian, só o deixa mai
 > [!IMPORTANT]
 > O tema existe apenas no modo escuro, não aplicando nada no modo claro do Obsidian.
 
-## 📥 Instalação
+---
+
+### 📥 Instalação
 
 **Pelo Obsidian:**
 
@@ -80,7 +64,9 @@ O Moonshade é simples de propósito: não reinventa o Obsidian, só o deixa mai
 
 **Opcional:** instale o plugin [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) para personalizar fundo, paletas e muito mais.
 
-## 🎛️ Personalização
+---
+
+### 🎛️ Personalização
 
 Com o Style Settings instalado, as opções ficam em _Configurações → Style Settings → Moonshade_.
 
@@ -92,7 +78,9 @@ Com o Style Settings instalado, as opções ficam em _Configurações → Style 
 | **Tipografia** | Fonte do texto, dos títulos, da interface e do código, e ligaduras |
 | **Interface** | Barras de rolagem, velocidade das animações, rolagem suave, barra de status, perfil do cofre e botões do explorador clássicos, e abas padrão do Obsidian |
 
-## 🔍 Recursos em Detalhe
+---
+
+### 🔍 Recursos em Detalhe
 
 Cada recurso abaixo mostra como ele fica e onde ajustá-lo no Style Settings.
 
@@ -195,7 +183,9 @@ As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada
 > [!NOTE]
 > **Para trocar:** _Configurações → Style Settings → Moonshade → Abas padrão do Obsidian._
 
-## 🧩 Compatibilidade
+---
+
+### 🧩 Compatibilidade
 
 | | |
 | --- | --- |
@@ -205,18 +195,23 @@ As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada
 | **Plugins** | Style Settings (opcional). Canvas, Bases e Kanban estilizados |
 | **Plataforma** | Pensado para desktop. No celular funciona com ajustes básicos |
 
-## ☕ Caso você goste do tema
+---
+
+### ☕ Caso você goste do tema
 
 Ele é gratuito e serve também como minha forma de aprendizado. Se quiser contribuir com um cafezinho (ou salvar minha coluna e as noites mal dormidas), o link está aqui:
 
 <a href="https://www.buymeacoffee.com/ibriddge" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height: 50px !important;width: 200px !important;"></a>
 
-## 📬 Feedback e Suporte
+---
+
+### 📬 Feedback e Suporte
 
 Encontrou um bug ou tem uma sugestão? Abra uma [issue](https://github.com/ibridd/moonshade/issues) no repositório.
 
+---
 
-## 📄 Créditos e Licença
+### 📄 Créditos e Licença
 
 - Licença [MIT](LICENSE).
 - Ícones do explorador e dos checkboxes de tarefa baseados no [Lucide](https://lucide.dev) (licença ISC).
