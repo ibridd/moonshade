@@ -3,10 +3,6 @@
 </p>
 
 <p align="center">
-    <b>🇧🇷 Português</b> · <a href="README.en.md">🇺🇸 English</a>
-</p>
-
-<p align="center">
     <img src="assets/PT-br/buttom/lang-toggle-pt.svg">
 </p>
 
