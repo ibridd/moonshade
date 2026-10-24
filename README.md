@@ -8,6 +8,10 @@
     <img src="assets/moonshade-screenshot.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
 </p>
 
+### Sumário
+
++ [📃 Prefácio](#-prefácio)
+
 ---
 
 ### 📃 Prefácio
