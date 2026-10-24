@@ -35,6 +35,7 @@ O Moonshade é simples de propósito: não reinventa o Obsidian, só o deixa mai
 - **Notas bem acabadas:** títulos em degraus nítidos, tabelas, citações, callouts, blocos de código, propriedades e tags com a mesma borda e o mesmo arredondamento.
 - **Tipografia à escolha:** fonte do texto, dos títulos, da interface e do código (com opção para desligar ligaduras), além do tamanho do texto, da altura da linha e da largura da coluna.
 - **Interface flutuante:** barra de status, perfil do cofre e botões do explorador em pílulas com borda e sombra suave (dá para voltar ao clássico), botões da janela em traço fino e barras de rolagem discretas.
+- **Checkboxes de tarefa com 22 estados:** além de pendente e feito, mais 20 estados (`- [/]`, `- [>]`, `- [!]`, `- [I]`...), cada um com ícone e cor próprios, e uma opção para trocar tudo por ícones Lucide sem caixa.
 - **Canvas, Bases e Kanban** estilizados no mesmo visual.
 - **Animações suaves**, com velocidade ajustável, que respeitam a opção do sistema de reduzir movimento.
 - **Exportação para PDF** em papel claro, mesmo com o tema escuro.
@@ -71,7 +72,7 @@ Com o Style Settings instalado, as opções ficam em _Configurações → Style 
 | **Cores** | Paleta de cores, cor de destaque e tom do fundo |
 | **Formato** | Arredondamento dos cantos, largura do texto da nota e estilo dos callouts |
 | **Abas** | Abas do tema (pílulas) ou abas padrão do Obsidian |
-| **Texto e tabelas** | Tamanho do texto, altura da linha e espaçamento das tabelas |
+| **Texto e tabelas** | Tamanho do texto, altura da linha, espaçamento das tabelas e ícones Lucide nos checkboxes |
 | **Tipografia** | Fonte do texto, dos títulos, da interface e do código, e ligaduras |
 | **Interface** | Barras de rolagem, velocidade das animações, rolagem suave, barra de status, perfil do cofre e botões do explorador clássicos |
 
@@ -137,6 +138,31 @@ As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada
 
 ---
 
+### ✅ Checkboxes de Tarefa
+
+<img src="assets/moonshade-task-checkboxes.svg" alt="Os 22 estados de tarefa, em caixa e em ícones Lucide"><br>
+
+Além do pendente `- [ ]` e do feito `- [x]`, escreva outro caractere dentro dos colchetes para marcar o estado da tarefa, como `- [/] Escrever as notas da versão`. São 20 estados extras, cada um com ícone e cor próprios, e os caracteres seguem a convenção de temas como o Minimal, então notas que já usam esses estados continuam funcionando.
+
+| Estado | Caractere | Estado | Caractere | Estado | Caractere |
+| --- | --- | --- | --- | --- | --- |
+| Em andamento | `[/]` | Estrela | `[*]` | Local | `[l]` |
+| Cancelado | `[-]` | Ideia | `[I]` | Economia | `[S]` |
+| Adiado | `[>]` | Urgente | `[f]` | A favor | `[p]` |
+| Agendado | `[<]` | Chave | `[k]` | Contra | `[c]` |
+| Importante | `[!]` | Vitória | `[w]` | Sobe | `[u]` |
+| Pergunta | `[?]` | Citação | `["]` | Desce | `[d]` |
+| Informação | `[i]` | Favorito | `[b]` | | |
+
+Por padrão, cada estado aparece em uma caixa tingida com a cor dele, e só o cancelado `[-]` fica riscado e apagado. As letras diferenciam maiúsculas de minúsculas: `[i]` é informação e `[I]` é ideia.
+
+Se preferir, ligue **Ícones Lucide nos checkboxes**: some a caixa e fica só o ícone, do mesmo tamanho dela. O pendente vira um círculo vazio, só com o contorno, e o feito e todos os estados extras viram ícones preenchidos na cor do estado.
+
+> [!NOTE]
+> **Para trocar:** _Configurações → Style Settings → Moonshade → Ícones Lucide nos checkboxes._
+
+---
+
 ### 🧩 Compatibilidade
 
 | | |
@@ -165,11 +191,11 @@ Encontrou um bug ou tem uma sugestão? Abra uma [issue](https://github.com/ibrid
 ### 📄 Créditos e Licença
 
 - Licença [MIT](LICENSE).
-- Ícones do explorador baseados no [Lucide](https://lucide.dev) (licença ISC).
+- Ícones do explorador e dos checkboxes de tarefa baseados no [Lucide](https://lucide.dev) (licença ISC).
 - Personalização pelo plugin [Style Settings](https://github.com/mgmeyers/obsidian-style-settings), de mgmeyers.
 
 ---
 
 <p align="center">
-    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
+    <img src="assets/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" widith="100%">
 </p>
