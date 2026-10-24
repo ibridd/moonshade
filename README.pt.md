@@ -12,6 +12,28 @@
     <b>Portugês / <a href="">Inglês</a></b>
 </p>
 
+### 📑 Sumário
+ 
++ [📃 Prefácio](#-prefácio)
++ [✨ Características](#-características)
++ [📥 Instalação](#-instalação)
++ [🎛️ Personalização](#️-personalização)
++ [🔍 Recursos em Detalhe](#-recursos-em-detalhe)
+    + [🌑 Tons de Fundo](#-tons-de-fundo)
+    + [🎨 Paleta de Cores](#-paleta-de-cores)
+    + [💬 Estilos de Callout](#-estilos-de-callout)
+    + [📝 Estilo das Notas](#-estilo-das-notas)
+    + [✅ Checkboxes de Tarefa](#-checkboxes-de-tarefa)
+    + [🧱 Layout Plano](#-layout-plano)
+    + [🗂️ Explorador e Elementos Flutuantes](#️-explorador-e-elementos-flutuantes)
+    + [🗃️ Abas](#️-abas)
++ [🧩 Compatibilidade](#-compatibilidade)
++ [☕ Caso você goste do tema](#-caso-você-goste-do-tema)
++ [📬 Feedback e Suporte](#-feedback-e-suporte)
++ [📄 Créditos e Licença](#-créditos-e-licença)
+
+---
+
 ### 📃 Prefácio
 
 Este tema nasceu da necessidade de ter um cantinho calmo para escrever à noite: um roxo bem escuro, bordas discretas e um texto que não cansa os olhos. Foi feito primeiro para o meu próprio uso, então talvez não atenda a tudo o que você precisa. Mas, se ele combinar com o seu jeito de escrever e pensar, fico feliz em dividi-lo com você.
