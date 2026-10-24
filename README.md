@@ -4,7 +4,7 @@
 
 ---
 
-<p>
+<p align="center">
     <img src="assets/moonshade-screenshot.svg" width="100%">
 </p>
 
@@ -87,8 +87,7 @@ O Moonshade não tem modo claro, mas oferece dois tons de fundo escuros. A escol
 - **Profunda:** o mais escuro, quase preto. Tem mais contraste com o texto e dá um ar mais intenso e marcante ao tema.
 - **Noite:** um degrau mais claro, com um roxo-azulado que deixa tudo mais suave e calmo, como a noite. É a escolha para quem prefere menos contraste.
 
-> [!NOTE]
-> **Para trocar:** _Configurações → Style Settings → Moonshade → Tom do fundo._
+A opção se chama **Tom do fundo**.
 
 ---
 
@@ -96,11 +95,7 @@ O Moonshade não tem modo claro, mas oferece dois tons de fundo escuros. A escol
 
 <img src="assets/moonshade-color-palettes.svg" alt="Visão geral das doze paletas de cores do tema"><br>
 
-O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Aurora, Bosque, Mel, Âmbar, Pêssego, Rubi, Crepúsculo e Névoa. Cada uma muda de uma vez a cor de destaque (links, listas, itens selecionados, borda da janela ativa e tags), as pastas e as cores do gráfico. Os arquivos mantêm uma cor fixa.
-
-> [!NOTE]
-> **Para trocar:** _Configurações → Style Settings → Moonshade → Paleta de cores._
-> Para mudar só a cor de links, seleção e item ativo, use a opção **Cor de destaque**, logo abaixo.
+O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Aurora, Bosque, Mel, Âmbar, Pêssego, Rubi, Crepúsculo e Névoa. Cada uma muda de uma vez a cor de destaque (links, listas, itens selecionados, borda da janela ativa e tags), as pastas e as cores do gráfico. Os arquivos mantêm uma cor fixa. A opção é **Paleta de cores**; para mudar só a cor de links, seleção e item ativo, use **Cor de destaque**, logo abaixo dela.
 
 ---
 
@@ -108,10 +103,7 @@ O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Auro
 
 <img src="assets/moonshade-callout-styles.svg" alt="Os seis estilos de callout do tema"><br>
 
-Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que muda é só o formato (borda, barra, cabeçalho, etiqueta ou sombra); a cor de cada tipo continua a mesma em todos. Há também cores e ícones para os nomes em português, como `dica`, `aviso`, `erro` e `exemplo`.
-
-> [!NOTE]
-> **Para trocar:** _Configurações → Style Settings → Moonshade → Estilo dos callouts._
+Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que muda é só o formato (borda, barra, cabeçalho, etiqueta ou sombra); a cor de cada tipo continua a mesma em todos. Há também cores e ícones para os nomes em português, como `dica`, `aviso`, `erro` e `exemplo`. A opção é **Estilo dos callouts**.
 
 ---
 
@@ -132,9 +124,6 @@ A barra de status, o perfil do cofre e os botões do explorador flutuam em pílu
 <img src="assets/moonshade-tab-styles.svg" alt="Estilos de abas: Moonshade, padrão do Obsidian e empilhadas"><br>
 
 As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada. Se preferir o estilo do Obsidian, ligue **Abas padrão do Obsidian**; o modo de abas empilhadas tem visual próprio e não muda.
-
-> [!NOTE]
-> **Para trocar:** _Configurações → Style Settings → Moonshade → Abas padrão do Obsidian._
 
 ---
 
@@ -157,9 +146,6 @@ Além do pendente `- [ ]` e do feito `- [x]`, escreva outro caractere dentro dos
 Por padrão, cada estado aparece em uma caixa tingida com a cor dele, e só o cancelado `[-]` fica riscado e apagado. As letras diferenciam maiúsculas de minúsculas: `[i]` é informação e `[I]` é ideia.
 
 Se preferir, ligue **Ícones Lucide nos checkboxes**: some a caixa e fica só o ícone, do mesmo tamanho dela. O pendente vira um círculo vazio, só com o contorno, e o feito e todos os estados extras viram ícones preenchidos na cor do estado.
-
-> [!NOTE]
-> **Para trocar:** _Configurações → Style Settings → Moonshade → Ícones Lucide nos checkboxes._
 
 ---
 
