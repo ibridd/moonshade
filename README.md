@@ -2,12 +2,14 @@
     <img src="assets/PT-br/banners/moonshade-banner.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
 </p>
 
-<p align="center">
-    <img src="assets/PT-br/buttom/lang-toggle-pt.svg">
-</p>
+---
 
 <p align="center">
     <img src="assets/PT-br/resources/moonshade-cover.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
+</p>
+
+<p align="center">
+    <a href=""><img src="assets/PT-br/buttom/lang-toggle-pt.svg"></a>
 </p>
 
 ## 📑 Sumário
@@ -213,13 +215,12 @@ Ele é gratuito e serve também como minha forma de aprendizado. Se quiser contr
 
 Encontrou um bug ou tem uma sugestão? Abra uma [issue](https://github.com/ibridd/moonshade/issues) no repositório.
 
+
 ## 📄 Créditos e Licença
 
 - Licença [MIT](LICENSE).
 - Ícones do explorador e dos checkboxes de tarefa baseados no [Lucide](https://lucide.dev) (licença ISC).
 - Personalização pelo plugin [Style Settings](https://github.com/mgmeyers/obsidian-style-settings), de mgmeyers.
-
----
 
 <p align="center">
     <img src="assets/PT-br/banners/moonshade-footer.svg" alt="Moonshade, um cantinho calmo para escrever à noite" width="100%">
