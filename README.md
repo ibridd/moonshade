@@ -79,7 +79,7 @@ Com o Style Settings instalado, as opções ficam em _Configurações → Style 
 
 ### 🌑 Tons de Fundo
 
-<img src="assets/moonshade-background-tones.png" alt="Comparação dos tons de fundo Profunda e Noite"><br>
+<img src="assets/moonshade-background-tones.svg" alt="Comparação dos tons de fundo Profunda e Noite"><br>
 
 O Moonshade não tem modo claro, mas oferece dois tons de fundo escuros. A escolha muda a base de todo o Obsidian: painéis, barra lateral e editor.
 
@@ -93,7 +93,7 @@ O Moonshade não tem modo claro, mas oferece dois tons de fundo escuros. A escol
 
 ### 🎨 Paleta de Cores
 
-<img src="assets/moonshade-color-palettes.png" alt="Visão geral das doze paletas de cores do tema"><br>
+<img src="assets/moonshade-color-palettes.svg" alt="Visão geral das doze paletas de cores do tema"><br>
 
 O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Aurora, Bosque, Mel, Âmbar, Pêssego, Rubi, Crepúsculo e Névoa. Cada uma muda de uma vez a cor de destaque (links, listas, itens selecionados, borda da janela ativa e tags), as pastas e as cores do gráfico. Os arquivos mantêm uma cor fixa.
 
@@ -105,7 +105,7 @@ O tema possui doze paletas de cores diferentes: Lua, Lavanda, Oceano, Céu, Auro
 
 ### 💬 Estilos de Callout
 
-<img src="assets/moonshade-callout-styles.png" alt="Os seis estilos de callout do tema"><br>
+<img src="assets/moonshade-callout-styles.svg" alt="Os seis estilos de callout do tema"><br>
 
 Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que muda é só o formato (borda, barra, cabeçalho, etiqueta ou sombra); a cor de cada tipo continua a mesma em todos. Há também cores e ícones para os nomes em português, como `dica`, `aviso`, `erro` e `exemplo`.
 
@@ -116,11 +116,11 @@ Os blocos de aviso (`> [!note]`, `> [!tip]`...) têm seis aparências. O que mud
 
 ### 🗂️ Explorador e Elementos Flutuantes
 
-<img src="assets/moonshade-file-explorer.png" alt="Explorador de arquivos com ícones e extensões"><br>
+<img src="assets/moonshade-file-explorer.svg" alt="Explorador de arquivos com ícones e extensões"><br>
 
 Pastas, notas, Bases, Canvas, imagens e PDFs têm ícones próprios, e a extensão aparece numa etiqueta à direita (as notas `.md` ficam sem ela). A cor das pastas segue a paleta; a dos arquivos é fixa.
 
-<img src="assets/moonshade-floating-elements.png" alt="Comparação entre os elementos clássicos e os flutuantes"><br>
+<img src="assets/moonshade-floating-elements.svg" alt="Comparação entre os elementos clássicos e os flutuantes"><br>
 
 A barra de status, o perfil do cofre e os botões do explorador flutuam em pílulas, com borda, desfoque e uma sombra suave. Os três podem voltar ao visual clássico, cada um por uma opção própria no Style Settings: barra de status clássica, perfil do cofre clássico e botões do explorador clássicos.
 
@@ -128,7 +128,7 @@ A barra de status, o perfil do cofre e os botões do explorador flutuam em pílu
 
 ### 🗃️ Abas
 
-<img src="assets/moonshade-tab-styles.png" alt="Estilos de abas: Moonshade, padrão do Obsidian e empilhadas"><br>
+<img src="assets/moonshade-tab-styles.svg" alt="Estilos de abas: Moonshade, padrão do Obsidian e empilhadas"><br>
 
 As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada. Se preferir o estilo do Obsidian, ligue **Abas padrão do Obsidian**; o modo de abas empilhadas tem visual próprio e não muda.
 
