@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <img src="assets/PT-br/resources/moonshade-screenshot.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
+    <img src="assets/PT-br/resources/moonshade-cover.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
 </p>
 
 ## 📑 Sumário
