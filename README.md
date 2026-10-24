@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+    <img src="assets/PT-br/buttom/lang-toggle-pt.svg">
+</p>
+
+<p align="center">
     <img src="assets/PT-br/resources/moonshade-cover.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
 </p>
 
