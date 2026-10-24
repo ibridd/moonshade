@@ -2,12 +2,14 @@
     <img src="assets/EN-us/banners/moonshade-banner.svg" alt="Moonshade, a calm little corner for writing at night" width="100%">
 </p>
 
+---
+
 <p align="center">
-    <a href="README.md">🇧🇷 Português</a> · <b>🇺🇸 English</b>
+    <img src="assets/EN-us/resources/moonshade-cover.svg" alt="Captura de tela do Moonshade no Obsidian: explorador, editor e barra lateral" width="100%">
 </p>
 
 <p align="center">
-    <img src="assets/EN-us/resources/moonshade-screenshot.svg" alt="Screenshot of Moonshade in Obsidian: file explorer, editor and sidebar" width="100%">
+    <b><a href="README.pt.md">Portugês</a> / Inglês</b>
 </p>
 
 ### 📑 Contents
