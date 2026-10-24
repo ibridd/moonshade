@@ -723,10 +723,10 @@ body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle
 body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active),
 body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active),
 body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active) {
-  background-color: var(--lua-border) !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  outline: 0 !important;
+  background-color: var(--lua-border);
+  border: 0;
+  box-shadow: none;
+  outline: 0;
 }
 body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
 body.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:not(:hover):not(:active)::after,
@@ -761,10 +761,10 @@ body.theme-dark .workspace-tabs {
 }
 
 body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active) {
-  background-color: var(--lua-border) !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  outline: 0 !important;
+  background-color: var(--lua-border);
+  border: 0;
+  box-shadow: none;
+  outline: 0;
 }
 body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active)::before,
 body.theme-dark .workspace-leaf-resize-handle:not(:hover):not(:active)::after {
@@ -785,7 +785,7 @@ body.theme-dark .workspace-tab-header-container {
 
 body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split > .workspace-leaf-resize-handle:not(:hover):not(:active),
 body.theme-dark:not(.is-mobile) .workspace-split.mod-right-split > .workspace-leaf-resize-handle:not(:hover):not(:active) {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split  { --lua-fl: -1px; --lua-fr: -1px; }
@@ -1532,6 +1532,7 @@ body.theme-dark .markdown-rendered mark {
   color: rgb(var(--lua-text));
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  line-height: 2;
 }
 body.theme-dark .cm-highlight {
   border-radius: var(--radius-s);
@@ -1540,9 +1541,7 @@ body.theme-dark .cm-highlight {
 body.theme-dark mark[style*="background"] {
   background-image: linear-gradient(rgba(var(--lua-base), 0.28), rgba(var(--lua-base), 0.28));
 }
-body.theme-dark .markdown-rendered p:has(mark) {
-  line-height: 2;
-}
+
 
 body.theme-dark .markdown-rendered ol > li::marker {
   color: rgb(var(--lua-overlay2));
