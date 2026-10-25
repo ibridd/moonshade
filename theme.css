@@ -958,9 +958,35 @@ body.theme-dark.is-popout-window:has(.vertical-tab-header)::after {
   border: 1px solid var(--lua-border-hover);
   border-radius: 8px;
 }
+
 body.theme-dark .prompt {
   background: rgb(var(--lua-mantle));
   border: 1px solid var(--lua-border);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+body.theme-dark .prompt .prompt-input,
+body.theme-dark .prompt .prompt-input:hover,
+body.theme-dark .prompt .prompt-input:focus,
+body.theme-dark .prompt .prompt-input:focus-visible {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--lua-border);
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+}
+body.theme-dark .prompt .prompt-input:focus {
+  border-bottom-color: rgba(var(--lua-accent), 0.45);
+}
+body.theme-dark .prompt .prompt-input-container {
+  border-radius: 0;
+}
+body.theme-dark .prompt .prompt-results {
+  border-radius: 0 0 var(--radius-l) var(--radius-l);
+}
+body.theme-dark .prompt .prompt-results .suggestion-item {
+  border-radius: var(--radius-s);
 }
 body.theme-dark .menu {
   background: rgb(var(--lua-mantle));
@@ -1205,10 +1231,6 @@ body.theme-dark [data-type="file-explorer"] .nav-folder-title::before,
 body.theme-dark [data-type="file-explorer"] .nav-file-title::before {
   content: "";
   order: 1;
-  flex: 0 0 auto;
-  width: 15px;
-  height: 15px;
-  margin-right: 6px;
   background-color: currentColor;
   opacity: 0.9;
   -webkit-mask-repeat: no-repeat;
@@ -1690,10 +1712,6 @@ body.theme-dark.lua-callout-9 .callout-title {
   background: rgb(var(--lua-cc));
   color: rgb(var(--lua-crust));
 }
-body.theme-dark.lua-callout-9 .callout-fold {
-  display: none;
-}
-
 body.theme-dark.lua-callout-10 .callout {
   border-width: 3px 0 0 0;
   border-color: rgb(var(--lua-cc));
@@ -1871,9 +1889,6 @@ body.theme-dark input[type="checkbox"] {
 body.theme-dark .notice {
   animation: lua-pop var(--lua-med) var(--lua-ease-out) both;
 }
-/* No celular, modais e menus são "bottom sheets" com animação e arrasto
-   nativos (transform). A animação do tema travaria o transform no fim e
-   quebraria o gesto de arrastar/fechar, então fica só no desktop. */
 body.theme-dark:not(.is-mobile) .modal,
 body.theme-dark:not(.is-mobile) .prompt {
   animation: lua-pop var(--lua-med) var(--lua-ease-out) both;
@@ -2101,15 +2116,6 @@ body.theme-dark .kanban-plugin__item-title-wrapper {
   border-radius: var(--radius-s);
 }
 
-/* ==========================================================================
-   MOBILE (Obsidian no celular/tablet: body.is-mobile)
-   Tudo que é específico do mobile fica aqui, depois das regras gerais
-   do tema, para sobrescrevê-las. Os efeitos só de desktop (moldura
-   do workspace, pílula do cofre, animações de modal/menu) usam
-   :not(.is-mobile) nos próprios blocos.
-   ========================================================================== */
-
-/* 1. Tabelas: espaçamento lateral menor e rolagem horizontal com o dedo */
 body.theme-dark.is-mobile {
   --lua-table-pad-x: 0.5em;
 }
@@ -2118,22 +2124,16 @@ body.theme-dark.is-mobile .markdown-rendered .el-table {
   -webkit-overflow-scrolling: touch;
 }
 
-/* 2. Botões: alvo de toque maior */
 body.theme-dark.is-mobile button:not(.clickable-icon) {
   min-height: 40px;
 }
 
-/* 3. Explorador: barra de botões da gaveta (novo arquivo, nova pasta...).
-   Margem lateral para não encostar nas bordas da tela. */
 body.theme-dark.is-mobile:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
   box-sizing: border-box;
   width: auto;
   max-width: calc(100% - 24px);
   margin: 0 12px 8px;
   justify-content: space-around;
-  /* Sem moldura: a pílula com borda/sombra/blur era pintada pela metade
-     dentro da gaveta no Android (só os cantos da borda apareciam, a
-     "linha"). Os ícones ficam soltos, como no Obsidian padrão. */
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -2141,8 +2141,6 @@ body.theme-dark.is-mobile:not(.lua-explorer-buttons-classic) .workspace-leaf-con
   backdrop-filter: none;
 }
 
-/* 3b. Explorador: etiqueta de extensão (.canvas, .png...) sem esticar a
-   linha do arquivo e centralizada na vertical */
 body.theme-dark.is-mobile [data-type="file-explorer"] .nav-file-title {
   align-items: center;
 }
@@ -2154,21 +2152,13 @@ body.theme-dark.is-mobile [data-type="file-explorer"] .nav-file-tag {
   line-height: 1.3;
 }
 
-/* 4. Barra de navegação flutuante na paleta do tema */
 body.theme-dark.is-mobile {
   --navbar-background: rgba(var(--lua-mantle), 0.92);
   --navbar-background-pinned: rgb(var(--lua-mantle));
 }
 
-/* 4b. Arredondamento dos botões e barras do celular, controlado pelo mesmo
-   slider "Arredondamento dos cantos" do Style Settings.
-   --lua-r-round = slider x 2: no padrão (10) os botões de ~35px viram
-   círculo/pílula, em 0 ficam quadrados e valores no meio dão cantos
-   arredondados. Os nomes de classe são os do Obsidian mobile; os que não
-   existirem na sua versão simplesmente não fazem nada. */
 body.theme-dark.is-mobile {
   --lua-r-round: calc(var(--lua-radius, 10px) * 2);
-  /* raio "extra grande" que o Obsidian usa em várias peças nativas */
   --radius-xl: calc(var(--lua-radius, 10px) * 1.6);
 }
 body.theme-dark.is-mobile :is(
@@ -2184,16 +2174,12 @@ body.theme-dark.is-mobile :is(
   .view-actions,
   .view-header .clickable-icon
 ):not(svg):not(.svg-icon) {
-  /* :not(svg) evita que o raio chegue ao ícone, que cortaria os cantos dele */
   border-radius: var(--lua-r-round);
 }
-/* cartões das telas de configurações (inclui as do Style Settings) */
 body.theme-dark.is-mobile :is(.setting-group, .setting-items) {
   border-radius: var(--radius-xl);
 }
 
-/* 5. Telas de toque não têm hover: sem isso a linha tocada da tabela
-   fica "grudada" no destaque até tocar em outro lugar */
 @media (hover: none) {
   body.theme-dark .markdown-rendered table tbody tr:hover td,
   body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:hover td {
@@ -2610,4 +2596,196 @@ body.theme-dark.lua-tasks-lucide li[data-task="\""] > input:checked,
 body.theme-dark.lua-tasks-lucide li[data-task="\""] > p > input:checked {
   --lua-tk: var(--lua-mauve);
   --lua-tk-lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1 1 22 22' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='24' height='24' fill='white'/%3E%3Cg stroke='black'%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)' fill='black' stroke='black'%3E%3Cpath d='M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z'/%3E%3Cpath d='M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.theme-dark {
+  --lua-icon-nudge: 0px;
+  --lua-file-icon-shift: 0px;
+  --lua-icon-size: 15px;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-folder-title,
+body.theme-dark [data-type="file-explorer"] .nav-file-title {
+  display: flex;
+  align-items: center;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-folder-title::before,
+body.theme-dark [data-type="file-explorer"] .nav-file-title::before {
+  align-self: center;
+  flex: 0 0 var(--lua-icon-size);
+  width: var(--lua-icon-size);
+  height: var(--lua-icon-size);
+  margin-top: var(--lua-icon-nudge);
+  margin-right: 6px;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-file-title::before {
+  margin-left: var(--lua-file-icon-shift);
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-folder-title > .tree-item-inner,
+body.theme-dark [data-type="file-explorer"] .nav-file-title > .tree-item-inner {
+  align-self: center;
+  line-height: 1.35;
+  min-width: 0;
+}
+
+body.theme-dark [data-type="file-explorer"] .nav-file-tag {
+  align-self: center;
+  line-height: 1.3;
+}
+
+body.theme-dark .workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
+body.theme-dark .block-language-base .bases-view,
+body.theme-dark .bases-view {
+  border-radius: var(--radius-m);
+}
+
+body.theme-dark.lua-callout-9 .callout-icon {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: rgb(var(--lua-crust));
+}
+body.theme-dark.lua-callout-9 .callout-icon .svg-icon {
+  width: 1em;
+  height: 1em;
+  stroke-width: 2.4px;
+}
+
+body.theme-dark.lua-callout-9 .callout-title {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: calc(100% - 1.6em);
+  min-width: 0;
+  line-height: 1.3;
+}
+
+body.theme-dark.lua-callout-9 .callout-title-inner {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: inherit;
+}
+
+body.theme-dark.lua-callout-9 .callout-fold {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: 0.15em;
+  color: rgb(var(--lua-crust));
+}
+body.theme-dark.lua-callout-9 .callout-fold .svg-icon {
+  width: 1em;
+  height: 1em;
+  stroke-width: 2.6px;
+  transition: transform 0.15s ease;
+}
+body.theme-dark.lua-callout-9 .callout.is-collapsed .callout-fold .svg-icon {
+  transform: rotate(-90deg);
+}
+body.theme-dark.lua-callout-9 .callout.is-collapsible .callout-title {
+  cursor: pointer;
+}
+body.theme-dark.lua-callout-9 .callout.is-collapsible .callout-title:hover {
+  filter: brightness(1.12);
+}
+
+body.theme-dark.lua-callout-9 .callout {
+  min-height: 2.9em;
+  padding-bottom: 0.9em;
+}
+body.theme-dark.lua-callout-9 .callout.is-collapsed {
+  min-height: 2.6em;
+  padding-bottom: 0.6em;
+}
+
+body.theme-dark:not(.lua-tasks-lucide) input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked,
+body.theme-dark:not(.lua-tasks-lucide) li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked,
+body.theme-dark:not(.lua-tasks-lucide) li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked {
+  background-color: rgb(var(--lua-tk));
+  border-color: rgb(var(--lua-tk));
+}
+
+body.theme-dark:not(.lua-tasks-lucide) input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked::after,
+body.theme-dark:not(.lua-tasks-lucide) li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked::after,
+body.theme-dark:not(.lua-tasks-lucide) li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked::after {
+  background-color: rgb(var(--lua-crust));
+  -webkit-mask-size: 90%;
+  mask-size: 90%;
+}
+
+body.theme-dark {
+  --lua-buttons-align: center;
+}
+
+body.theme-dark:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  display: flex;
+  justify-content: var(--lua-buttons-align);
+}
+body.theme-dark:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+body.theme-dark:not(.is-mobile):not(.lua-profile-classic) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) .workspace-sidedock-vault-profile {
+  left: 10px;
+  right: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  gap: 14px;
+}
+body.theme-dark:not(.is-mobile):not(.lua-profile-classic) .workspace-split.mod-left-split:not(.is-sidedock-collapsed) .workspace-sidedock-vault-profile > * {
+  flex-grow: 0;
+}
+
+body.theme-dark button.mod-cta:not(.clickable-icon):hover {
+  background: rgb(var(--lua-accent));
+  border-color: rgb(var(--lua-accent));
+  color: rgb(var(--lua-crust));
+  filter: brightness(1.12);
+}
+
+body.theme-dark button.mod-warning:not(.clickable-icon):hover {
+  border-color: rgb(var(--lua-red));
+}
+
+body.theme-dark {
+  --lua-btn-lift: -1px;
+  --lua-icon-grow: 1.07;
+}
+
+body.theme-dark button,
+body.theme-dark .clickable-icon {
+  transition:
+    background-color var(--lua-fast) var(--lua-ease),
+    border-color var(--lua-fast) var(--lua-ease),
+    color var(--lua-fast) var(--lua-ease),
+    filter var(--lua-fast) var(--lua-ease),
+    box-shadow var(--lua-med) var(--lua-ease),
+    transform var(--lua-med) var(--lua-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.theme-dark button:not(.clickable-icon):not(:disabled):hover {
+    transform: translateY(var(--lua-btn-lift));
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  }
+  body.theme-dark button:not(.clickable-icon):not(:disabled):active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: none;
+  }
+
+  body.theme-dark .clickable-icon:not(.is-disabled):hover {
+    transform: scale(var(--lua-icon-grow));
+  }
+  body.theme-dark .clickable-icon:not(.is-disabled):active {
+    transform: scale(0.93);
+  }
 }
