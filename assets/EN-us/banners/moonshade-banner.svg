@@ -23,6 +23,6 @@
 <path d="M532.75,316H605.25V342H532.75A5,5 0 0 1 527.75,337V321A5,5 0 0 1 532.75,316Z" fill="#120f24" fill-opacity=".82"/><path d="M605.25,316H667.25A5,5 0 0 1 672.25,321V337A5,5 0 0 1 667.25,342H605.25Z" fill="#4b3d85"/>
 <rect x="528.2" y="316.5" width="143.5" height="25" rx="5" fill="none" stroke="#a98bf5" stroke-opacity=".28"/>
 <text x="537.8" y="333" fill="#d9d2f2" textLength="57.5" lengthAdjust="spacing">VERSION</text>
-<text x="615.2" y="333" fill="#ffffff" textLength="47.0" lengthAdjust="spacing">V1.0.5</text>
+<text x="615.2" y="333" fill="#ffffff" textLength="47.0" lengthAdjust="spacing">V1.0.6</text>
 </g>
 </g></svg>
