@@ -6,8 +6,8 @@ settings:
         id: lua-info
         title: About this theme
         title.pt-BR: Sobre este tema
-        description: Moonshade only works in Obsidian's dark mode (Settings → Appearance → Base color scheme → Dark). In light mode, nothing is applied.
-        description.pt-BR: O Moonshade só funciona no modo escuro do Obsidian (Configurações → Aparência → Cores base → Escuro). No modo claro, nada é aplicado.
+        description: Moonshade only works in Obsidian's dark mode (Settings → Appearance → Base color scheme → Dark). In light mode, nothing is applied. On phones, the status bar, vault pill and tab options have no effect.
+        description.pt-BR: O Moonshade só funciona no modo escuro do Obsidian (Configurações → Aparência → Cores base → Escuro). No modo claro, nada é aplicado. No celular, as opções de barra de status, perfil do cofre e abas não têm efeito.
         type: info-text
 
     -
@@ -105,8 +105,8 @@ settings:
         id: lua-radius
         title: Corner radius
         title.pt-BR: Arredondamento dos cantos
-        description: 0 makes everything square; larger values round more. Applies to tabs, buttons, tables, quotes and panel frames.
-        description.pt-BR: 0 deixa tudo reto; valores maiores arredondam mais. Vale para abas, botões, tabelas, citações e molduras dos painéis.
+        description: 0 makes everything square; larger values round more. Applies to tabs, buttons, tables, quotes and panel frames, and on mobile to the round buttons and bars.
+        description.pt-BR: 0 deixa tudo reto; valores maiores arredondam mais. Vale para abas, botões, tabelas, citações e molduras dos painéis, e no celular para os botões e barras redondos.
         type: variable-number-slider
         default: 10
         min: 0
@@ -1171,7 +1171,6 @@ body.theme-dark:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-
   border-radius: var(--radius-m);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
-
 body.theme-dark {
   --lua-explorer-folder: var(--lua-pal-folder);
   --lua-explorer-file: var(--lua-file);
@@ -1285,7 +1284,6 @@ body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".svg" i]
 
 body.theme-dark.lua-table-compact { --lua-table-pad-y: 0.3em; --lua-table-pad-x: 0.5em; }
 body.theme-dark.lua-table-comfy   { --lua-table-pad-y: 0.8em; --lua-table-pad-x: 0.95em; }
-body.theme-dark.is-mobile         { --lua-table-pad-x: 0.5em; }
 
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget {
   display: block;
@@ -1541,7 +1539,6 @@ body.theme-dark .cm-highlight {
 body.theme-dark mark[style*="background"] {
   background-image: linear-gradient(rgba(var(--lua-base), 0.28), rgba(var(--lua-base), 0.28));
 }
-
 
 body.theme-dark .markdown-rendered ol > li::marker {
   color: rgb(var(--lua-overlay2));
@@ -1870,13 +1867,18 @@ body.theme-dark input[type="checkbox"] {
     box-shadow var(--lua-fast) var(--lua-ease);
 }
 
-body.theme-dark .modal,
-body.theme-dark .prompt,
 body.theme-dark .notice {
   animation: lua-pop var(--lua-med) var(--lua-ease-out) both;
 }
-body.theme-dark .menu,
-body.theme-dark .suggestion-container {
+/* No celular, modais e menus são "bottom sheets" com animação e arrasto
+   nativos (transform). A animação do tema travaria o transform no fim e
+   quebraria o gesto de arrastar/fechar, então fica só no desktop. */
+body.theme-dark:not(.is-mobile) .modal,
+body.theme-dark:not(.is-mobile) .prompt {
+  animation: lua-pop var(--lua-med) var(--lua-ease-out) both;
+}
+body.theme-dark:not(.is-mobile) .menu,
+body.theme-dark:not(.is-mobile) .suggestion-container {
   animation: lua-drop var(--lua-med) var(--lua-ease-out) both;
 }
 body.theme-dark .modal-bg {
@@ -2098,12 +2100,108 @@ body.theme-dark .kanban-plugin__item-title-wrapper {
   border-radius: var(--radius-s);
 }
 
+/* ==========================================================================
+   MOBILE (Obsidian no celular/tablet: body.is-mobile)
+   Tudo que é específico do mobile fica aqui, depois das regras gerais
+   do tema, para sobrescrevê-las. Os efeitos só de desktop (moldura
+   do workspace, pílula do cofre, animações de modal/menu) usam
+   :not(.is-mobile) nos próprios blocos.
+   ========================================================================== */
+
+/* 1. Tabelas: espaçamento lateral menor e rolagem horizontal com o dedo */
+body.theme-dark.is-mobile {
+  --lua-table-pad-x: 0.5em;
+}
 body.theme-dark.is-mobile .markdown-rendered .el-table {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+/* 2. Botões: alvo de toque maior */
 body.theme-dark.is-mobile button:not(.clickable-icon) {
   min-height: 40px;
+}
+
+/* 3. Explorador: barra de botões da gaveta (novo arquivo, nova pasta...).
+   Margem lateral para não encostar nas bordas da tela. */
+body.theme-dark.is-mobile:not(.lua-explorer-buttons-classic) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+  box-sizing: border-box;
+  width: auto;
+  max-width: calc(100% - 24px);
+  margin: 0 12px 8px;
+  justify-content: space-around;
+  /* Sem moldura: a pílula com borda/sombra/blur era pintada pela metade
+     dentro da gaveta no Android (só os cantos da borda apareciam, a
+     "linha"). Os ícones ficam soltos, como no Obsidian padrão. */
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* 3b. Explorador: etiqueta de extensão (.canvas, .png...) sem esticar a
+   linha do arquivo e centralizada na vertical */
+body.theme-dark.is-mobile [data-type="file-explorer"] .nav-file-title {
+  align-items: center;
+}
+body.theme-dark.is-mobile [data-type="file-explorer"] .nav-file-tag {
+  align-self: center;
+  margin-block: 0;
+  padding: 2px 8px;
+  font-size: 0.75em;
+  line-height: 1.3;
+}
+
+/* 4. Barra de navegação flutuante na paleta do tema */
+body.theme-dark.is-mobile {
+  --navbar-background: rgba(var(--lua-mantle), 0.92);
+  --navbar-background-pinned: rgb(var(--lua-mantle));
+}
+
+/* 4b. Arredondamento dos botões e barras do celular, controlado pelo mesmo
+   slider "Arredondamento dos cantos" do Style Settings.
+   --lua-r-round = slider x 2: no padrão (10) os botões de ~35px viram
+   círculo/pílula, em 0 ficam quadrados e valores no meio dão cantos
+   arredondados. Os nomes de classe são os do Obsidian mobile; os que não
+   existirem na sua versão simplesmente não fazem nada. */
+body.theme-dark.is-mobile {
+  --lua-r-round: calc(var(--lua-radius, 10px) * 2);
+  /* raio "extra grande" que o Obsidian usa em várias peças nativas */
+  --radius-xl: calc(var(--lua-radius, 10px) * 1.6);
+}
+body.theme-dark.is-mobile :is(
+  .mobile-navbar,
+  .mobile-navbar-actions,
+  [class*="active-tab-header"],
+  .workspace-drawer-header-icon,
+  [class*="workspace-drawer-header"] .clickable-icon,
+  .workspace-drawer-vault-actions .clickable-icon,
+  .workspace-drawer-vault-actions button,
+  [class*="sidebar-toggle"],
+  .view-header-left,
+  .view-actions,
+  .view-header .clickable-icon
+):not(svg):not(.svg-icon) {
+  /* :not(svg) evita que o raio chegue ao ícone, que cortaria os cantos dele */
+  border-radius: var(--lua-r-round);
+}
+/* cartões das telas de configurações (inclui as do Style Settings) */
+body.theme-dark.is-mobile :is(.setting-group, .setting-items) {
+  border-radius: var(--radius-xl);
+}
+
+/* 5. Telas de toque não têm hover: sem isso a linha tocada da tabela
+   fica "grudada" no destaque até tocar em outro lugar */
+@media (hover: none) {
+  body.theme-dark .markdown-rendered table tbody tr:hover td,
+  body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:hover td {
+    background: var(--lua-table-row-bg);
+  }
+  body.theme-dark .markdown-rendered table tbody tr:nth-child(even):hover td,
+  body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table tbody tr:nth-child(even):hover td {
+    background: var(--lua-table-row-alt-bg);
+  }
 }
 
 @media print {
