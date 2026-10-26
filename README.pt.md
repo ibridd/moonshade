@@ -211,7 +211,7 @@ As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada
 
 | | |
 | --- | --- |
-| **Obsidian** | 1.4.0 ou superior (a estilização de Bases exige o Obsidian 1.9 ou superior) |
+| **Obsidian** | 1.9.0 ou superior |
 | **Versão** | 1.0.6 · [notas de versão](https://github.com/ibridd/moonshade/releases) |
 | **Modo** | Somente escuro |
 | **Plugins** | Style Settings (opcional). Canvas, Bases e Kanban estilizados |

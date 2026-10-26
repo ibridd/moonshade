@@ -185,7 +185,7 @@ Moonshade doesn't use loose panels in cards. The file explorer, the editor and t
 
 In **split view**, the line between the panes is cut out like in a browser: a short stretch in the tab strip and the normal stretch right below, always aligned.
 
-<img src="assets/moonshade-collapsible-sidebars.svg" alt="Collapsed sidebars: left hidden and right hidden"><br>
+<img src="assets/EN-us/resources/moonshade-collapsible-sidebars.svg" alt="Collapsed sidebars: left hidden and right hidden"><br>
 
 With a sidebar collapsed, the editor reaches the ribbon line (left) or the window edge (right), as in Obsidian.
 
@@ -214,7 +214,7 @@ Moonshade's tabs are compact pills, with a larger, underlined active tab. If you
 
 | | |
 | --- | --- |
-| **Obsidian** | 1.4.0 or higher (Bases styling requires Obsidian 1.9 or higher) |
+| **Obsidian** | 1.9.0 or higher |
 | **Version** | 1.0.6 · [release notes](https://github.com/ibridd/moonshade/releases) |
 | **Mode** | Dark only |
 | **Plugins** | Style Settings (optional). Canvas, Bases and Kanban styled |

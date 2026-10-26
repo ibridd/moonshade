@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Downloaded installers and archives (not part of the theme)
+*.exe
+*.zip
+*.dmg
+*.AppImage
+
+# Local vault and dependencies
+.obsidian/
+node_modules/
