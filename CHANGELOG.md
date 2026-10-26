@@ -6,6 +6,48 @@ published with each [GitHub release](https://github.com/ibridd/moonshade/release
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and
 the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.0.7] — 2026-10-26
+
+Compatibility and polish release: Obsidian 1.14 and tables.
+
+### Fixed
+
+- **Mobile bottom bar:** Obsidian 1.14 removed `--navbar-background`, so setting
+  that variable did nothing. The bar now sets `background-color` on
+  `.mobile-navbar`, the element that actually paints it.
+- **System "reduce motion":** zeroing the animation speed was not enough — a
+  value set in Style Settings wins over the custom property. The media query now
+  also sets the durations directly, so the preference is respected.
+- **Bases embedded in notes:** Obsidian hard-codes the embed radius to 0 with a
+  more specific selector than any theme rule. The theme now sets
+  `--bases-embed-border-radius`, so the embed follows the corner radius slider.
+- **Tables with unbreakable content:** one long word (a URL, a run of the same
+  letter) stretched its column and pushed the whole table out of the text column.
+  Long words now wrap.
+- **Inline highlight and inline code:** the horizontal padding left a visible gap
+  before punctuation (`destaque ,`). It is smaller now.
+- **H6:** 0.75em lands around 11px; the size now has a 12px floor.
+
+### Changed
+
+- **Editor tables:** the table was forced 32px wider than the text column, so a
+  wide table dragged the whole note sideways. It now matches the text column and
+  scrolls inside its own widget, and the wrapper follows the table so the column
+  `+` stays on the table's edge.
+- **Table zebra:** the alternating row was nearly invisible (alpha 0.45 over
+  0.22). It is now 0.6, so the stripes read as stripes.
+- **Read-mode tables:** three duplicated rules were merged into one block. No
+  visual change.
+
+### Housekeeping
+
+- Removed two dead rules: a `.nav-folder-collapse-indicator` transition (the
+  element does not exist anymore) and a task-checkbox block superseded later in
+  the file.
+- Merged the duplicated `.callout` blocks.
+- Added section comments for the mobile block, the print block, the reduced
+  motion query and the task grid.
+
 ## [1.0.6] — 2026-10-25
 
 ### Changed
@@ -130,6 +172,7 @@ First public release: a calm dark purple theme for Obsidian.
   phone and tablet tweaks, and styling for Canvas, Bases and the Kanban plugin
   (best effort: these depend on Obsidian internals and plugins).
 
+[1.0.7]: https://github.com/ibridd/moonshade/releases/tag/1.0.7
 [1.0.6]: https://github.com/ibridd/moonshade/releases/tag/1.0.6
 [1.0.5]: https://github.com/ibridd/moonshade/releases/tag/1.0.5
 [1.0.4]: https://github.com/ibridd/moonshade/releases/tag/1.0.4

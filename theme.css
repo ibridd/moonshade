@@ -671,7 +671,7 @@ body.theme-dark {
   --lua-table-pad-x: 0.65em;
   --lua-table-head-bg: rgb(var(--lua-surface0));
   --lua-table-row-bg: rgba(var(--lua-surface0), 0.22);
-  --lua-table-row-alt-bg: rgba(var(--lua-surface0), 0.45);
+  --lua-table-row-alt-bg: rgba(var(--lua-surface0), 0.6);
   --lua-table-row-hover-bg: rgba(var(--lua-accent), 0.08);
   --lua-table-col-border: rgba(var(--lua-surface2), 0.28);
 
@@ -1308,37 +1308,62 @@ body.theme-dark [data-type="file-explorer"] .nav-file-title[data-path$=".svg" i]
 body.theme-dark.lua-table-compact { --lua-table-pad-y: 0.3em; --lua-table-pad-x: 0.5em; }
 body.theme-dark.lua-table-comfy   { --lua-table-pad-y: 0.8em; --lua-table-pad-x: 0.95em; }
 
+/* Tabela no editor: ocupa a coluna de texto e, quando o conteudo passa dela,
+   rola dentro do proprio widget (comportamento nativo do Obsidian), em vez de
+   empurrar a nota inteira para o lado.
+   A folga lateral nativa (margin -12px + padding 12px) existe para hospedar as
+   alcas de arrastar e o botao "+". Ela e zerada aqui para a caixa de rolagem
+   ficar do mesmo tamanho do texto; as alcas passam a encostar na borda. */
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget {
   display: block;
-  width: calc(100% + 32px) !important;
+  width: auto !important;
   max-width: none !important;
+  margin: 0 !important;
+  padding: var(--table-drag-handle-size) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
   box-sizing: border-box;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn {
+  inset-inline-start: auto !important;
+  inset-inline-end: 0;
+}
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .table-row-drag-handle {
+  inset-inline-end: auto !important;
+  inset-inline-start: 0;
 }
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
   display: block;
-  width: 100% !important;
-  max-width: 100% !important;
+  /* O wrapper acompanha a tabela (e nunca fica menor que a coluna de texto):
+     assim o botao "+" da coluna fica na borda real da tabela, em vez de ser
+     cortado na borda visivel do painel. */
+  width: max-content !important;
+  min-width: 100% !important;
+  max-width: none !important;
   box-sizing: border-box;
 }
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table,
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table.table-editor {
-  width: 100% !important;
-  min-width: 100% !important;
+  width: auto !important;      /* cresce conforme o conteudo... */
+  min-width: 100% !important;  /* ...mas nunca menos que a coluna de texto */
   max-width: none !important;
   table-layout: auto;
 }
+/* Palavra longa sem espaco (URL, "ddddddddd...") nao infla a coluna: quebra.
+   Sem isso, uma unica celula assim empurra a tabela inteira para fora. */
+body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget .cm-content {
+  overflow-wrap: anywhere;
+}
+/* Tabela na leitura: ocupa a coluna de texto e rola no wrapper. */
 body.theme-dark .markdown-rendered table {
   table-layout: auto;
+  width: 100%;
+  min-width: 100%;
+  max-width: none;
 }
 
 body.theme-dark .markdown-rendered .el-table {
   overflow-x: auto;
-}
-
-body.theme-dark .markdown-rendered table {
-  width: 100%;
-  min-width: 100%;
-  max-width: none;
 }
 body.theme-dark .markdown-rendered table,
 body.theme-dark .markdown-source-view.mod-cm6 .cm-table-widget table {
@@ -1442,7 +1467,7 @@ body.theme-dark {
   --h3-size: 1.4em;
   --h4-size: 1.2em;
   --h5-size: 1.05em;
-  --h6-size: 0.75em;
+  --h6-size: max(0.75em, 12px);
   --h1-weight: 700;
   --h2-weight: 700;
   --h3-weight: 600;
@@ -1549,7 +1574,9 @@ body.theme-dark hr {
 
 body.theme-dark .markdown-rendered mark {
   border-radius: var(--radius-s);
-  padding: 0.12em 0.45em;
+  /* respiro so na vertical: com padding lateral o destaque criava um vao
+     antes da virgula e depois do ponto */
+  padding: 0.12em 0.15em;
   color: rgb(var(--lua-text));
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
@@ -1651,9 +1678,6 @@ body.theme-dark .callout {
     rgb(var(--lua-mantle));
   background-clip: padding-box;
   mix-blend-mode: normal;
-}
-
-body.theme-dark .callout {
   border-color: rgba(var(--lua-cc), var(--callout-border-opacity, 0.3));
 }
 body.theme-dark .callout-title {
@@ -1726,7 +1750,7 @@ body.theme-dark .markdown-rendered pre {
 }
 body.theme-dark .markdown-rendered :not(pre) > code {
   border-radius: var(--radius-s);
-  padding: 0.1em 0.4em;
+  padding: 0.1em 0.25em;
 }
 body.theme-dark .markdown-rendered .code-block-flair {
   color: rgb(var(--lua-overlay0));
@@ -1845,8 +1869,7 @@ body.theme-dark .tree-item-self {
     background-color var(--lua-fast) var(--lua-ease),
     color var(--lua-fast) var(--lua-ease);
 }
-body.theme-dark .collapse-icon svg,
-body.theme-dark .nav-folder-collapse-indicator svg {
+body.theme-dark .collapse-icon svg {
   transition: transform var(--lua-med) var(--lua-ease-out);
 }
 
@@ -1904,9 +1927,17 @@ body.theme-dark .tooltip {
   animation: lua-fade var(--lua-fast) var(--lua-ease) both;
 }
 
+/* "Reduzir movimento" do sistema. Zerar --lua-motion-speed nao basta: se o
+   usuario mexeu no slider, o valor do Style Settings vence a custom property.
+   Por isso as duracoes tambem sao zeradas na declaracao. */
 @media (prefers-reduced-motion: reduce) {
-  body.theme-dark.theme-dark {
+  body.theme-dark.theme-dark,
+  body.theme-dark.theme-dark :is(*, ::before, ::after) {
     --lua-motion-speed: 0;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -2064,6 +2095,10 @@ body.theme-dark {
 
   --bases-table-container-border-width: 1px;
   --bases-table-container-border-radius: var(--radius-m);
+  /* O embed do Base dentro da nota pega o raio desta variavel. O Obsidian fixa
+     border-radius: 0 por um seletor mais especifico que qualquer regra do tema,
+     entao o caminho aqui e trocar o valor da variavel. */
+  --bases-embed-border-radius: var(--radius-m);
   --bases-table-border-color: var(--lua-border-soft);
   --bases-table-column-border-width: 1px;
   --bases-table-row-border-width: 1px;
@@ -2116,6 +2151,12 @@ body.theme-dark .kanban-plugin__item-title-wrapper {
   border-radius: var(--radius-s);
 }
 
+/* ======================================================================
+   MOBILE (body.is-mobile)
+   Regras de celular/tablet ficam aqui, depois das gerais, para sobrescreve-las.
+   Os efeitos so de desktop (moldura do workspace, pilula do cofre, animacao
+   de modal/menu) usam :not(.is-mobile) no proprio bloco.
+   ====================================================================== */
 body.theme-dark.is-mobile {
   --lua-table-pad-x: 0.5em;
 }
@@ -2152,9 +2193,10 @@ body.theme-dark.is-mobile [data-type="file-explorer"] .nav-file-tag {
   line-height: 1.3;
 }
 
-body.theme-dark.is-mobile {
-  --navbar-background: rgba(var(--lua-mantle), 0.92);
-  --navbar-background-pinned: rgb(var(--lua-mantle));
+/* Barra inferior. O Obsidian 1.14 nao usa mais --navbar-background: o fundo
+   vem de background-color em .mobile-navbar. */
+body.theme-dark.is-mobile .mobile-navbar {
+  background-color: rgba(var(--lua-mantle), 0.92);
 }
 
 body.theme-dark.is-mobile {
@@ -2191,6 +2233,8 @@ body.theme-dark.is-mobile :is(.setting-group, .setting-items) {
   }
 }
 
+/* Exportacao em PDF: inverte para papel claro. So os tokens de cor sao
+   trocados; bordas, tabelas e canvas derivam deles por var(). */
 @media print {
   body.theme-dark {
     --lua-text: 40, 38, 56;
@@ -2251,12 +2295,8 @@ body.theme-dark .workspace-tabs.mod-stacked .workspace-tab-container > .workspac
   box-shadow: -6px 0 12px -6px rgba(0, 0, 0, 0.6);
 }
 
-body.theme-dark input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked,
-body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked,
-body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked {
-  background-color: rgba(var(--lua-tk), 0.16);
-  border-color: rgba(var(--lua-tk), 0.9);
-}
+/* O preenchimento solido de cada estado fica no fim do arquivo
+   (:not(.lua-tasks-lucide)); aqui so o icone da caixa. */
 body.theme-dark input:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]):checked::after,
 body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > input:checked::after,
 body.theme-dark li:is([data-task="/"], [data-task="-"], [data-task=">"], [data-task="<"], [data-task="!"], [data-task="?"], [data-task="*"], [data-task="i"], [data-task="b"], [data-task="l"], [data-task="p"], [data-task="c"], [data-task="I"], [data-task="f"], [data-task="k"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="S"], [data-task="\""]) > p > input:checked::after {

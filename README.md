@@ -215,7 +215,7 @@ Moonshade's tabs are compact pills, with a larger, underlined active tab. If you
 | | |
 | --- | --- |
 | **Obsidian** | 1.9.0 or higher |
-| **Version** | 1.0.6 · [release notes](https://github.com/ibridd/moonshade/releases) |
+| **Version** | 1.0.7 · [release notes](https://github.com/ibridd/moonshade/releases) |
 | **Mode** | Dark only |
 | **Plugins** | Style Settings (optional). Canvas, Bases and Kanban styled |
 | **Platform** | Designed for desktop. On mobile it works with basic adjustments |
