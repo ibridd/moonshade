@@ -223,7 +223,7 @@ As abas do Moonshade são pílulas compactas, com a aba ativa maior e sublinhada
 
 Ele é gratuito e serve também como minha forma de aprendizado. Se quiser contribuir com um cafezinho (ou salvar minha coluna e as noites mal dormidas), o link está aqui:
 
-<a href="https://www.buymeacoffee.com/ibriddge" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height: 50px !important;width: 200px !important;"></a>
+<a href='https://ko-fi.com/V7Q82AODDU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ---
 
